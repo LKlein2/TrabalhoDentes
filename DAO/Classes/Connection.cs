@@ -10,6 +10,13 @@ namespace DAO.Classes
 {
     public class Connection : IConnection, IDisposable
     {
+        private SqlConnection connection;
+
+        public Connection()
+        {
+            connection = new SqlConnection("Data Source=DESKTOP-H7OTOKV; Initial Catalog=toothsdb; Integrated Security=True");
+        }
+
         public SqlConnection Abrir()
         {
             throw new NotImplementedException();
