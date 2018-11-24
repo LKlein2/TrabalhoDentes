@@ -40,6 +40,7 @@ namespace toothsProjectFinal
             this.cadastrarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.consultarEditarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.labelDentistaApp = new System.Windows.Forms.Label();
+            this.secretariaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -52,7 +53,7 @@ namespace toothsProjectFinal
             this.pacienteToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(77, 450);
+            this.menuStrip1.Size = new System.Drawing.Size(126, 450);
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -61,7 +62,7 @@ namespace toothsProjectFinal
             this.agendaToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.visualizarAgendaToolStripMenuItem});
             this.agendaToolStripMenuItem.Name = "agendaToolStripMenuItem";
-            this.agendaToolStripMenuItem.Size = new System.Drawing.Size(64, 19);
+            this.agendaToolStripMenuItem.Size = new System.Drawing.Size(113, 19);
             this.agendaToolStripMenuItem.Text = "Agenda";
             // 
             // visualizarAgendaToolStripMenuItem
@@ -76,41 +77,42 @@ namespace toothsProjectFinal
             this.lancarConsultaToolStripMenuItem,
             this.editarConsultaToolStripMenuItem});
             this.consultasToolStripMenuItem.Name = "consultasToolStripMenuItem";
-            this.consultasToolStripMenuItem.Size = new System.Drawing.Size(64, 19);
+            this.consultasToolStripMenuItem.Size = new System.Drawing.Size(113, 19);
             this.consultasToolStripMenuItem.Text = "Consultas";
             // 
             // lancarConsultaToolStripMenuItem
             // 
             this.lancarConsultaToolStripMenuItem.Name = "lancarConsultaToolStripMenuItem";
-            this.lancarConsultaToolStripMenuItem.Size = new System.Drawing.Size(159, 22);
-            this.lancarConsultaToolStripMenuItem.Text = "Lancar Consulta";
+            this.lancarConsultaToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.lancarConsultaToolStripMenuItem.Text = "Paciente";
             // 
             // editarConsultaToolStripMenuItem
             // 
             this.editarConsultaToolStripMenuItem.Name = "editarConsultaToolStripMenuItem";
-            this.editarConsultaToolStripMenuItem.Size = new System.Drawing.Size(159, 22);
+            this.editarConsultaToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.editarConsultaToolStripMenuItem.Text = "Editar Consulta";
             // 
             // pacienteToolStripMenuItem
             // 
             this.pacienteToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.cadastrarToolStripMenuItem,
-            this.consultarEditarToolStripMenuItem});
+            this.consultarEditarToolStripMenuItem,
+            this.secretariaToolStripMenuItem});
             this.pacienteToolStripMenuItem.Name = "pacienteToolStripMenuItem";
-            this.pacienteToolStripMenuItem.Size = new System.Drawing.Size(64, 19);
-            this.pacienteToolStripMenuItem.Text = "Paciente";
+            this.pacienteToolStripMenuItem.Size = new System.Drawing.Size(113, 19);
+            this.pacienteToolStripMenuItem.Text = "Cadastro";
             // 
             // cadastrarToolStripMenuItem
             // 
             this.cadastrarToolStripMenuItem.Name = "cadastrarToolStripMenuItem";
-            this.cadastrarToolStripMenuItem.Size = new System.Drawing.Size(160, 22);
-            this.cadastrarToolStripMenuItem.Text = "Cadastrar";
+            this.cadastrarToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.cadastrarToolStripMenuItem.Text = "Paciente";
             // 
             // consultarEditarToolStripMenuItem
             // 
             this.consultarEditarToolStripMenuItem.Name = "consultarEditarToolStripMenuItem";
-            this.consultarEditarToolStripMenuItem.Size = new System.Drawing.Size(160, 22);
-            this.consultarEditarToolStripMenuItem.Text = "Consultar/Editar";
+            this.consultarEditarToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.consultarEditarToolStripMenuItem.Text = "Odontologista";
             // 
             // labelDentistaApp
             // 
@@ -123,6 +125,12 @@ namespace toothsProjectFinal
             this.labelDentistaApp.Size = new System.Drawing.Size(216, 42);
             this.labelDentistaApp.TabIndex = 1;
             this.labelDentistaApp.Text = "Dentista App";
+            // 
+            // secretariaToolStripMenuItem
+            // 
+            this.secretariaToolStripMenuItem.Name = "secretariaToolStripMenuItem";
+            this.secretariaToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.secretariaToolStripMenuItem.Text = "Secretaria";
             // 
             // Menu
             // 
@@ -154,5 +162,6 @@ namespace toothsProjectFinal
         private System.Windows.Forms.ToolStripMenuItem cadastrarToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem consultarEditarToolStripMenuItem;
         private System.Windows.Forms.Label labelDentistaApp;
+        private System.Windows.Forms.ToolStripMenuItem secretariaToolStripMenuItem;
     }
 }
