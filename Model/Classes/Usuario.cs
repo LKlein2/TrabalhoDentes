@@ -20,6 +20,7 @@ namespace Model
             this.senha = senha;
         }
 
+        public int ID { get => id; set => id = value; }
         public string Login { get => login; set => login = value; }
         public string Senha { get => senha; set => senha = value; }
     }
