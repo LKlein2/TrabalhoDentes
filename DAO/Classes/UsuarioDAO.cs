@@ -25,11 +25,14 @@ namespace DAO
             using (SqlCommand comando = connection.Buscar().CreateCommand())
             {
                 comando.CommandType = CommandType.Text;
-                comando.CommandText = ("update usuario set login=@login, senha=@senha where id=@id");
+                comando.CommandText = ("update usuario set login=@login, senha=@senha, nome=@nome, documento=@documento, tipoacesso=@tipoAcesso where id=@id");
 
                 comando.Parameters.Add("@login", SqlDbType.Text).Value = model.Login;
                 comando.Parameters.Add("@senha", SqlDbType.Text).Value = model.Senha;
                 comando.Parameters.Add("@ID", SqlDbType.Text).Value = model.ID;
+                comando.Parameters.Add("@nome", SqlDbType.Text).Value = model.ID;
+                comando.Parameters.Add("@documento", SqlDbType.Text).Value = model.ID;
+                comando.Parameters.Add("@tipoAcesso", SqlDbType.Text).Value = model.ID;
                 comando.ExecuteNonQuery();
             }
         }
@@ -45,10 +48,13 @@ namespace DAO
             {
                 comando.CommandType = CommandType.Text;
                 comando.CommandText = "insert into usuario(login, senha, nome, documento, tipoacesso) values" +
-                                      " (@login,@senha,@nome,@documento,@tipoacesso); Select @Identity";
+                                      " (@login,@senha,@nome,@documento,@tipoAcesso); Select @Identity";
 
                 comando.Parameters.Add("@login", SqlDbType.Text).Value = model.Login;
                 comando.Parameters.Add("@senha", SqlDbType.Text).Value = model.Senha;
+                comando.Parameters.Add("@nome", SqlDbType.Text).Value = model.Senha;
+                comando.Parameters.Add("@documento", SqlDbType.Text).Value = model.Senha;
+                comando.Parameters.Add("@tipoAcesso", SqlDbType.Text).Value = model.Senha;
 
                 model.ID = int.Parse(comando.ExecuteScalar().ToString());
             }
