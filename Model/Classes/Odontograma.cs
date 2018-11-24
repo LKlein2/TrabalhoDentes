@@ -6,8 +6,8 @@ using System.Threading.Tasks;
 
 namespace Model
 {
-    public interface IAdministrativel
+    public class Odontograma
     {
-        void criarUsuario(string login, string senha, string nome, string documento, int tipoAcesso);
+
     }
 }

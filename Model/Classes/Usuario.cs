@@ -11,17 +11,30 @@ namespace Model
         private int id;
         private string login;
         private string senha;
+        private string nome;
+        private string documento;
+        private int tipoAcesso; 
+        // 1 - Administrador.
+        // 2 - Odontologista.
+        // 3 - Secretaria.
+        // 4 - Paciente.
 
         public Usuario() { }
 
-        public Usuario(string login, string senha)
+        public Usuario(string login, string senha, string nome, string documento, int tipoAcesso)
         {
-            this.Login = login;
+            this.login = login;
             this.senha = senha;
+            this.nome = nome;
+            this.documento = documento;
+            this.tipoAcesso = tipoAcesso;
         }
 
         public int ID { get => id; set => id = value; }
         public string Login { get => login; set => login = value; }
         public string Senha { get => senha; set => senha = value; }
+        public string Nome { get => senha; set => senha = value; }
+        public string Documento { get => senha; set => senha = value; }
+        public string TipoAcesso { get => senha; set => senha = value; }
     }
 }

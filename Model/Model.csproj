@@ -41,8 +41,13 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Classes\Cliente.cs" />
+    <Compile Include="Classes\Agenda.cs" />
+    <Compile Include="Classes\Consulta.cs" />
+    <Compile Include="Classes\EvolucaoOdontograma.cs" />
+    <Compile Include="Classes\Odontograma.cs" />
+    <Compile Include="Classes\Paciente.cs" />
     <Compile Include="Classes\Dentista.cs" />
+    <Compile Include="Classes\Radiograma.cs" />
     <Compile Include="Interfaces\IAdministrativel.cs" />
     <Compile Include="Interfaces\IAutenticavel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
