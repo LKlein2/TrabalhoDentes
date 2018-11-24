@@ -4,9 +4,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ClassLibrary1
+namespace Model
 {
-    class Secretaria
+    public interface IAutenticavel
     {
+        Boolean Autentica(string login, string senha);
     }
 }

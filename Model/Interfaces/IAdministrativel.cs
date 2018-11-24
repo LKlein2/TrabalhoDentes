@@ -4,9 +4,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ClassLibrary1
+namespace Model
 {
-    interface IAutenticavel
+    public interface IAdministrativel
     {
+        void criarUsuario(string login, string senha);
     }
 }
