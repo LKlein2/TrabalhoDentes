@@ -51,6 +51,9 @@
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
       <DependentUpon>Settings.settings</DependentUpon>
     </Compile>
+    <Compile Include="toothsdbDataSet.cs">
+      <DependentUpon>toothsdbDataSet.xsd</DependentUpon>
+    </Compile>
     <Compile Include="toothsdbDataSet.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -74,6 +77,12 @@
     <None Include="toothsdbDataSet.xss">
       <DependentUpon>toothsdbDataSet.xsd</DependentUpon>
     </None>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Model\Model.csproj">
+      <Project>{A7372772-A767-4B51-8A54-768DC2FEF7FC}</Project>
+      <Name>Model</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

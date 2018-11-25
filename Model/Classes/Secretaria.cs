@@ -6,14 +6,9 @@ using System.Threading.Tasks;
 
 namespace Model
 {
-    public class Secretaria : Usuario, IAdministrativel, IAutenticavel
+    public class Secretaria : Usuario, IAdministrativel
     {
-        public bool Autentica(string login, string senha)
-        {
-            throw new NotImplementedException();
-        }
-
-        public void criarUsuario(string login, string senha)
+        public void criarUsuario(string login, string senha, string nome, string documento, int tipoAcesso)
         {
             throw new NotImplementedException();
         }

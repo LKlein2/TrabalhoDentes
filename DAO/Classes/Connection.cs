@@ -1,6 +1,7 @@
 ﻿using DAO.Interfaces;
 using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
@@ -20,22 +21,30 @@ namespace DAO.Classes
 
         public SqlConnection Abrir()
         {
-            throw new NotImplementedException();
+            if (connection.State == ConnectionState.Closed)
+            {
+                connection.Open();
+            }
+            return connection;
         }
 
         public SqlConnection Buscar()
         {
-            throw new NotImplementedException();
-        }
-
-        public void Dispose()
-        {
-            throw new NotImplementedException();
+            return this.Abrir();
         }
 
         public void Fechar()
         {
-            throw new NotImplementedException();
+            if (connection.State == ConnectionState.Open)
+            {
+                connection.Close();
+            }
+        }
+
+        public void Dispose()
+        {
+            this.Fechar();
+            GC.SuppressFinalize(this);
         }
     }
 }

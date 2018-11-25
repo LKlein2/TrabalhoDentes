@@ -6,8 +6,8 @@ using System.Threading.Tasks;
 
 namespace Model
 {
-    public interface IAutenticavel
+    public class Odontograma
     {
-        Boolean Autentica(string login, string senha);
+
     }
 }
