@@ -42,7 +42,17 @@ namespace Model
             return this.Usuario.ID;
         }
 
+        public int idUsuario()
+        {
+            return this.Usuario.ID;
+        }
+
         public int tipoCriador()
+        {
+            return this.Usuario.TipoAcesso;
+        }
+
+        public int tipoUsuario()
         {
             return this.Usuario.TipoAcesso;
         }

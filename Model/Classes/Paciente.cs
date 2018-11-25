@@ -32,5 +32,15 @@ namespace Model
         {
             return this.Usuario.Nome + " - " + " paciente.";
         }
+
+        public int idUsuario()
+        {
+            return this.Usuario.ID;
+        }
+
+        public int tipoUsuario()
+        {
+            return this.Usuario.TipoAcesso;
+        }
     }
 }

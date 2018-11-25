@@ -9,5 +9,7 @@ namespace Model
     public interface IAutenticavel
     {
         string Autenticacao();
+        int idUsuario();
+        int tipoUsuario();
     }
 }
