@@ -15,6 +15,7 @@ namespace toothsProjectFinal
         public Agenda()
         {
             InitializeComponent();
+       
         }
     }
 }

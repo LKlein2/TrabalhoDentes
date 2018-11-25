@@ -37,6 +37,15 @@ namespace toothsProjectFinal
             this.Close();
             // o que fazer para fechar o frmLogin ?
         }
+
+        private void buttonAgenda_Click(object sender, EventArgs e)
+        {
+            if (Acesso.TipoUsuario() != 4)
+            { 
+                Agenda mostraAgenda = new Agenda();
+                mostraAgenda.Show();
+            }
+        }
     }
 
     public static class Acesso
