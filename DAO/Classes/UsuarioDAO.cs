@@ -77,9 +77,9 @@ namespace DAO
                     comando.Parameters.Add("@tipoAcesso", SqlDbType.Text).Value = model.Senha;
                 if (model.DataCadastro != null)
                     comando.Parameters.Add("@datacadastro", SqlDbType.DateTime).Value = model.DataCadastro;
-                if (model.Criador.idCriador() != 0)
+                if (model.Criador != null)
                     comando.Parameters.Add("@idcriador", SqlDbType.Int).Value = model.Criador.idCriador();
-                if (model.Criador.tipoCriador() != 0)
+                if (model.Criador != null)
                     comando.Parameters.Add("@tipocriador", SqlDbType.Int).Value = model.Criador.tipoCriador();
 
                 model.ID = int.Parse(comando.ExecuteScalar().ToString());
@@ -109,9 +109,9 @@ namespace DAO
                 sql += ", @tipoaesso";
             if (model.DataCadastro != null)
                 sql += ", @datacadastro ";
-            if (model.Criador.idCriador() != 0)
+            if (model.Criador != null)
                 sql += ", @idCriador ";
-            if (model.Criador.tipoCriador() != 0)
+            if (model.Criador != null)
                 sql += ", @tipoCriador ";
             sql += "); Select @Identity";
 
@@ -140,6 +140,34 @@ namespace DAO
                         usuario.Nome = reader.GetString(3);
                         usuario.Documento = reader.GetString(4);
                         usuario.TipoAcesso = reader.GetInt32(5);
+                    }
+                }
+            }
+            return usuario;
+        }
+
+        public Usuario LocalizarPorId(int id)
+        {
+            Usuario usuario = null;
+            using (SqlCommand comando = connection.Buscar().CreateCommand())
+            {
+                comando.CommandType = CommandType.Text;
+                comando.CommandText = "Select id, login, senha, nome, documento, tipoacesso, datacadastro from usuario where id = @id";
+                comando.Parameters.Add("@Id", SqlDbType.Int).Value = id;
+
+                using (SqlDataReader reader = comando.ExecuteReader())
+                {
+                    if (reader.HasRows)
+                    {
+                        usuario = new Usuario();
+                        reader.Read();
+                        usuario.ID = reader.GetInt32(0);
+                        usuario.Login = reader.GetString(1);
+                        usuario.Senha = reader.GetString(2);
+                        usuario.Nome = reader.GetString(3);
+                        usuario.Documento = reader.GetString(4);
+                        usuario.TipoAcesso = reader.GetInt32(5);
+                        usuario.DataCadastro = reader.GetDateTime(6);
                     }
                 }
             }

@@ -1,4 +1,7 @@
-﻿using Model;
+﻿using DAO;
+using DAO.Classes;
+using DAO.Interfaces;
+using Model;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -40,11 +43,35 @@ namespace toothsProjectFinal
     {
         private static int id;
         private static int tipoUsuario;
+        private static IAdministrativel administrativel;
 
         public static void setaAcesso(IAutenticavel a)
         {
             Acesso.id = a.idUsuario();
             Acesso.tipoUsuario = a.tipoUsuario();
+            Acesso.administrativel = RetAdm();
+        }
+
+        private static IAdministrativel RetAdm()
+        {
+            IAdministrativel a = null;
+            IConnection conexao = new Connection();
+            conexao.Abrir();
+
+            UsuarioDao usuarioDao = new UsuarioDao(conexao);
+            Usuario u = usuarioDao.LocalizarPorId(Acesso.id);
+            if (u.TipoAcesso == 2)
+            {
+                Dentista d = new Dentista(u);
+                a = d;
+                
+            }
+            else if (u.TipoAcesso == 3)
+            {
+                Secretaria s = new Secretaria(u);
+                a = s;
+            }
+            return a;
         }
 
         public static int ID()
@@ -55,6 +82,11 @@ namespace toothsProjectFinal
         public static int TipoUsuario()
         {
             return Acesso.tipoUsuario;
+        }
+
+        public static IAdministrativel Administrativel()
+        {
+            return Acesso.administrativel;
         }
 
     }
