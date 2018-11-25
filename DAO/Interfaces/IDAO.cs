@@ -16,6 +16,6 @@ namespace DAO.Interfaces
 
         bool Remover(T model);
 
-        T LocalizarPorLogin(params Object[] Keys);
+        //T LocalizarPorLogin(params Object[] Keys);
     }
 }

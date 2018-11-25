@@ -33,8 +33,8 @@ namespace Model
         public int ID { get => id; set => id = value; }
         public string Login { get => login; set => login = value; }
         public string Senha { get => senha; set => senha = value; }
-        public string Nome { get => senha; set => senha = value; }
-        public string Documento { get => senha; set => senha = value; }
-        public string TipoAcesso { get => senha; set => senha = value; }
+        public string Nome { get => nome; set => nome = value; }
+        public string Documento { get => documento; set => documento = value; }
+        public int TipoAcesso { get => tipoAcesso; set => tipoAcesso = value; }
     }
 }

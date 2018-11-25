@@ -283,7 +283,7 @@ namespace DAO {
             
             private global::System.Data.DataColumn columnlogin;
             
-            private global::System.Data.DataColumn columnpassword;
+            private global::System.Data.DataColumn columnsenha;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
@@ -336,9 +336,9 @@ namespace DAO {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public global::System.Data.DataColumn passwordColumn {
+            public global::System.Data.DataColumn senhaColumn {
                 get {
-                    return this.columnpassword;
+                    return this.columnsenha;
                 }
             }
             
@@ -379,12 +379,12 @@ namespace DAO {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public USUARIORow AddUSUARIORow(int id, string login, string password) {
+            public USUARIORow AddUSUARIORow(int id, string login, string senha) {
                 USUARIORow rowUSUARIORow = ((USUARIORow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         id,
                         login,
-                        password};
+                        senha};
                 rowUSUARIORow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowUSUARIORow);
                 return rowUSUARIORow;
@@ -416,7 +416,7 @@ namespace DAO {
             internal void InitVars() {
                 this.columnid = base.Columns["id"];
                 this.columnlogin = base.Columns["login"];
-                this.columnpassword = base.Columns["password"];
+                this.columnsenha = base.Columns["senha"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -426,16 +426,16 @@ namespace DAO {
                 base.Columns.Add(this.columnid);
                 this.columnlogin = new global::System.Data.DataColumn("login", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnlogin);
-                this.columnpassword = new global::System.Data.DataColumn("password", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnpassword);
+                this.columnsenha = new global::System.Data.DataColumn("senha", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnsenha);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
                                 this.columnid}, true));
                 this.columnid.AllowDBNull = false;
                 this.columnid.Unique = true;
                 this.columnlogin.AllowDBNull = false;
                 this.columnlogin.MaxLength = 20;
-                this.columnpassword.AllowDBNull = false;
-                this.columnpassword.MaxLength = 50;
+                this.columnsenha.AllowDBNull = false;
+                this.columnsenha.MaxLength = 50;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -600,12 +600,12 @@ namespace DAO {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public string password {
+            public string senha {
                 get {
-                    return ((string)(this[this.tableUSUARIO.passwordColumn]));
+                    return ((string)(this[this.tableUSUARIO.senhaColumn]));
                 }
                 set {
-                    this[this.tableUSUARIO.passwordColumn] = value;
+                    this[this.tableUSUARIO.senhaColumn] = value;
                 }
             }
         }
@@ -771,7 +771,7 @@ namespace DAO.toothsdbDataSetTableAdapters {
             tableMapping.DataSetTable = "USUARIO";
             tableMapping.ColumnMappings.Add("id", "id");
             tableMapping.ColumnMappings.Add("login", "login");
-            tableMapping.ColumnMappings.Add("password", "password");
+            tableMapping.ColumnMappings.Add("password", "senha");
             this._adapter.TableMappings.Add(tableMapping);
             this._adapter.DeleteCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.DeleteCommand.Connection = this.Connection;

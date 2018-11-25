@@ -55,12 +55,14 @@
             // 
             // labelMsg
             // 
-            this.labelMsg.AutoSize = true;
-            this.labelMsg.Location = new System.Drawing.Point(191, 136);
+            this.labelMsg.BackColor = System.Drawing.SystemColors.Control;
+            this.labelMsg.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.labelMsg.Location = new System.Drawing.Point(85, 136);
             this.labelMsg.Name = "labelMsg";
-            this.labelMsg.Size = new System.Drawing.Size(20, 17);
+            this.labelMsg.Size = new System.Drawing.Size(229, 17);
             this.labelMsg.TabIndex = 5;
             this.labelMsg.Text = "...";
+            this.labelMsg.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
             // labelSenha
             // 
@@ -88,6 +90,7 @@
             this.buttonLogin.TabIndex = 2;
             this.buttonLogin.Text = "OK";
             this.buttonLogin.UseVisualStyleBackColor = true;
+            this.buttonLogin.Click += new System.EventHandler(this.buttonLogin_Click);
             // 
             // txtSenha
             // 
@@ -114,7 +117,6 @@
             this.Name = "FrmLogin";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "DentistaApp";
-            this.Load += new System.EventHandler(this.FrmLogin_Load);
             this.groupLogin.ResumeLayout(false);
             this.groupLogin.PerformLayout();
             this.ResumeLayout(false);

@@ -49,7 +49,6 @@
     <Compile Include="Classes\Dentista.cs" />
     <Compile Include="Classes\Radiograma.cs" />
     <Compile Include="Interfaces\IAdministrativel.cs" />
-    <Compile Include="Interfaces\IAutenticavel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Classes\Secretaria.cs" />
     <Compile Include="Classes\Usuario.cs" />

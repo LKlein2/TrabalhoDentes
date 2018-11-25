@@ -61,23 +61,28 @@ namespace DAO
             return model;
         }
 
-        public Usuario LocalizarPorLogin(params object[] keys)
+        public Usuario LocalizarPorLogin(string login, string senha)
         {
             Usuario usuario = null;
             using (SqlCommand comando = connection.Buscar().CreateCommand())
             {
                 comando.CommandType = CommandType.Text;
-                comando.CommandText = "Select id, login, senha from usuario where id = @id";
-                comando.Parameters.Add("@id", SqlDbType.Int).Value = keys[0];
+                comando.CommandText = "Select id, login, senha, nome, documento, tipoacesso from usuario where login = @login and senha = @senha";
+                comando.Parameters.Add("@login", SqlDbType.VarChar).Value = login;
+                comando.Parameters.Add("@senha", SqlDbType.VarChar).Value = senha;
 
                 using (SqlDataReader reader = comando.ExecuteReader())
                 {
                     if (reader.HasRows)
                     {
                         usuario = new Usuario();
+                        reader.Read();
                         usuario.ID = reader.GetInt32(0);
                         usuario.Login = reader.GetString(1);
                         usuario.Senha = reader.GetString(2);
+                        usuario.Nome = reader.GetString(3);
+                        usuario.Documento = reader.GetString(4);
+                        usuario.TipoAcesso = reader.GetInt32(5);
                     }
                 }
             }
