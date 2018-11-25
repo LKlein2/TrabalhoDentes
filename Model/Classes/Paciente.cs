@@ -15,6 +15,11 @@ namespace Model
 
         public Paciente() {}
 
+        public Paciente(Usuario usuario)
+        {
+            this.Usuario = usuario;
+        }
+
         public Paciente(Usuario usuario, string endereco, string telefone, DateTime dataNascimento)
         {
             this.Usuario = usuario;

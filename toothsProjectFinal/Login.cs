@@ -48,7 +48,7 @@ namespace toothsProjectFinal
                 a = new Secretaria(usuario);
             } else if (usuario.TipoAcesso == 4)
             {
-                a = new Paciente();
+                a = new Paciente(usuario);
             }
             Menu menu = new Menu(a);
             menu.Show();
