@@ -59,6 +59,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>toothsdbDataSet.xsd</DependentUpon>
     </Compile>
+    <Compile Include="toothsdbDataSet1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>toothsdbDataSet1.xsd</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config" />
@@ -76,6 +81,17 @@
     </None>
     <None Include="toothsdbDataSet.xss">
       <DependentUpon>toothsdbDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="toothsdbDataSet1.xsc">
+      <DependentUpon>toothsdbDataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="toothsdbDataSet1.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>toothsdbDataSet1.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="toothsdbDataSet1.xss">
+      <DependentUpon>toothsdbDataSet1.xsd</DependentUpon>
     </None>
   </ItemGroup>
   <ItemGroup>

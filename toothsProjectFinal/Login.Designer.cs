@@ -98,6 +98,7 @@
             this.txtSenha.Name = "txtSenha";
             this.txtSenha.Size = new System.Drawing.Size(226, 22);
             this.txtSenha.TabIndex = 1;
+            this.txtSenha.UseSystemPasswordChar = true;
             // 
             // txtUsuario
             // 
