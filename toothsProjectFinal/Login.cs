@@ -30,14 +30,35 @@ namespace toothsProjectFinal
             Usuario u = usuarioDao.LocalizarPorLogin(txtUsuario.Text, txtSenha.Text);
             if (u != null)
             {
-                Menu menu = new Menu();
-                menu.Show();
-                this.Hide();
+                AbreMenu(u);
             } else
             {
-                labelMsg.Text = "Login ou senha inválidos!";
-                labelMsg.ForeColor = Color.Red;
+                FalhaAutenticacao();
             }
+        }
+
+        private void AbreMenu(Usuario usuario)
+        {
+            IAutenticavel a = null;
+            if (usuario.TipoAcesso == 2)
+            {
+                a = new Dentista(usuario);
+            } else if (usuario.TipoAcesso == 3)
+            {
+                a = new Secretaria(usuario);
+            } else if (usuario.TipoAcesso == 4)
+            {
+                a = new Paciente();
+            }
+            Menu menu = new Menu(a);
+            menu.Show();
+            this.Hide();
+        }
+
+        private void FalhaAutenticacao()
+        {
+            labelMsg.Text = "Login ou senha inválidos!";
+            labelMsg.ForeColor = Color.Red;
         }
     }
 }

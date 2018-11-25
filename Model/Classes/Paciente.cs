@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Model
 {
-    public class Paciente
+    public class Paciente : IAutenticavel
     {
         private string endereco;
         private string telefone;
@@ -17,14 +17,20 @@ namespace Model
 
         public Paciente(Usuario usuario, string endereco, string telefone, DateTime dataNascimento)
         {
-            this.usuario = usuario;
+            this.Usuario = usuario;
             this.endereco = endereco;
             this.telefone = telefone;
-            this.dataNascimento = dataNascimento;
+            this.DataNascimento = dataNascimento;
         }
 
         public string Endereco { get => endereco; set => endereco = value; }
         public string Telefone { get => telefone; set => telefone = value; }
-        public DateTime DataNascimento { get => DataNascimento; set => DataNascimento = value; }
+        public Usuario Usuario { get => usuario; set => usuario = value; }
+        public DateTime DataNascimento { get => dataNascimento; set => dataNascimento = value; }
+
+        public string Autenticacao()
+        {
+            return this.Usuario.Nome + " - " + " paciente.";
+        }
     }
 }

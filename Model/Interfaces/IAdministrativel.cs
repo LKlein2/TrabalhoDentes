@@ -8,6 +8,10 @@ namespace Model
 {
     public interface IAdministrativel
     {
-        void criarUsuario(string login, string senha, string nome, string documento, int tipoAcesso);
+        Usuario criarUsuario(string login, string senha, string nome, string documento, int tipoAcesso);
+
+        int idCriador();
+
+        int tipoCriador();
     }
 }

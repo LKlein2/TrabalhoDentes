@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Model;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,8 +13,10 @@ namespace toothsProjectFinal
 {
     public partial class Menu : Form
     {
-        public Menu()
+        public Menu(IAutenticavel autenticavel)
         {
+            if (autenticavel != null)
+                this.Text = autenticavel.Autenticacao();
             InitializeComponent();
         }
 

@@ -24,17 +24,35 @@ namespace DAO
         {
             using (SqlCommand comando = connection.Buscar().CreateCommand())
             {
+                string sql;
+                sql = MontaSqlUpdate(model);
                 comando.CommandType = CommandType.Text;
-                comando.CommandText = ("update usuario set login=@login, senha=@senha, nome=@nome, documento=@documento, tipoacesso=@tipoAcesso where id=@id");
+                comando.CommandText = (sql);
 
                 comando.Parameters.Add("@login", SqlDbType.Text).Value = model.Login;
                 comando.Parameters.Add("@senha", SqlDbType.Text).Value = model.Senha;
                 comando.Parameters.Add("@ID", SqlDbType.Text).Value = model.ID;
-                comando.Parameters.Add("@nome", SqlDbType.Text).Value = model.ID;
-                comando.Parameters.Add("@documento", SqlDbType.Text).Value = model.ID;
-                comando.Parameters.Add("@tipoAcesso", SqlDbType.Text).Value = model.ID;
+                if (model.Nome != null) comando.Parameters.Add("@nome", SqlDbType.Text).Value = model.Nome;
+                if (model.Documento != null) comando.Parameters.Add("@documento", SqlDbType.Text).Value = model.Documento;
+                if (model.TipoAcesso != 0) comando.Parameters.Add("@tipoAcesso", SqlDbType.Text).Value = model.TipoAcesso;
+                if (model.DataCadastro != null) comando.Parameters.Add("datacadastro", SqlDbType.DateTime).Value = model.DataCadastro;
+
                 comando.ExecuteNonQuery();
             }
+        }
+
+        private string MontaSqlUpdate (Usuario usuario)
+        {
+            string sql;
+            sql = "update usuario set ";
+            sql += "login=@login ";
+            sql += ", senha=@senha ";
+            if (usuario.Nome != null)           sql += ", nome=@nome ";
+            if (usuario.Documento != null)      sql += ", documento=@documento ";
+            if (usuario.TipoAcesso != 0)        sql += ", tipacesso=@tipoacesso ";
+            if (usuario.DataCadastro != null)   sql += ", datacadastro=@datacadastro ";
+
+            return sql;
         }
 
         public void Dispose()
@@ -46,19 +64,58 @@ namespace DAO
         {
             using (SqlCommand comando = connection.Buscar().CreateCommand())
             {
+                string sql = MontaSqlInsert(model);
                 comando.CommandType = CommandType.Text;
-                comando.CommandText = "insert into usuario(login, senha, nome, documento, tipoacesso) values" +
-                                      " (@login,@senha,@nome,@documento,@tipoAcesso); Select @Identity";
+                comando.CommandText = sql;
 
                 comando.Parameters.Add("@login", SqlDbType.Text).Value = model.Login;
                 comando.Parameters.Add("@senha", SqlDbType.Text).Value = model.Senha;
                 comando.Parameters.Add("@nome", SqlDbType.Text).Value = model.Senha;
-                comando.Parameters.Add("@documento", SqlDbType.Text).Value = model.Senha;
-                comando.Parameters.Add("@tipoAcesso", SqlDbType.Text).Value = model.Senha;
+                if (model.Documento != null)
+                    comando.Parameters.Add("@documento", SqlDbType.Text).Value = model.Senha;
+                if (model.TipoAcesso != 0)
+                    comando.Parameters.Add("@tipoAcesso", SqlDbType.Text).Value = model.Senha;
+                if (model.DataCadastro != null)
+                    comando.Parameters.Add("@datacadastro", SqlDbType.DateTime).Value = model.DataCadastro;
+                if (model.Criador.idCriador() != 0)
+                    comando.Parameters.Add("@idcriador", SqlDbType.Int).Value = model.Criador.idCriador();
+                if (model.Criador.tipoCriador() != 0)
+                    comando.Parameters.Add("@tipocriador", SqlDbType.Int).Value = model.Criador.tipoCriador();
 
                 model.ID = int.Parse(comando.ExecuteScalar().ToString());
             }
             return model;
+        }
+
+        private string MontaSqlInsert(Usuario model)
+        {
+            string sql;
+            sql = "insert into usuario(login, senha, nome";
+            if (model.Documento != null)
+                sql += ", documento ";
+            if (model.TipoAcesso != 0)
+                sql += ", tipoaesso";
+            if (model.DataCadastro != null)
+                sql += ", datacadastro ";
+            if (model.Criador.idCriador() != 0)
+                sql += ", idCriador ";
+            if (model.Criador.tipoCriador() != 0)
+                sql += ", tipoCriador ";
+            sql += ") values (";
+            sql += "@login, @senha, @nome";
+            if (model.Documento != null)
+                sql += ", @documento ";
+            if (model.TipoAcesso != 0)
+                sql += ", @tipoaesso";
+            if (model.DataCadastro != null)
+                sql += ", @datacadastro ";
+            if (model.Criador.idCriador() != 0)
+                sql += ", @idCriador ";
+            if (model.Criador.tipoCriador() != 0)
+                sql += ", @tipoCriador ";
+            sql += "); Select @Identity";
+
+            return sql;
         }
 
         public Usuario LocalizarPorLogin(string login, string senha)
