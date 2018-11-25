@@ -20,7 +20,7 @@ namespace toothsProjectFinal
         {
             InitializeComponent();
 
-            if (Acesso.TipoUsuario() == 1)
+            if (Acesso.TipoUsuario() == 4)
             {
                 buttonCadastrarAtualizar.Enabled = false;
             }
