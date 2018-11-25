@@ -97,9 +97,9 @@ namespace DAO
                 sql += ", tipoaesso";
             if (model.DataCadastro != null)
                 sql += ", datacadastro ";
-            if (model.Criador.idCriador() != 0)
+            if (model.Criador.idCriador() != null)
                 sql += ", idCriador ";
-            if (model.Criador.tipoCriador() != 0)
+            if (model.Criador.tipoCriador() != null)
                 sql += ", tipoCriador ";
             sql += ") values (";
             sql += "@login, @senha, @nome";

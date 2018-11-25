@@ -19,6 +19,11 @@ namespace toothsProjectFinal
         public frmCadastro()
         {
             InitializeComponent();
+
+            if (Acesso.TipoUsuario() == 1)
+            {
+                buttonCadastrarAtualizar.Enabled = false;
+            }
         }
 
         private void buttonSair_Click(object sender, EventArgs e)
@@ -28,12 +33,13 @@ namespace toothsProjectFinal
 
         private void buttonCadastrar_Click(object sender, EventArgs e)
         {
+            
             IConnection conexao = new Connection();
             conexao.Abrir();
 
             UsuarioDao usuarioDao = new UsuarioDao(conexao);
 
-            Usuario newUser = new Usuario(textBoxLogin.Text, textBoxSenha.Text, textBoxNome.Text);
+            Usuario newUser = new Usuario(textBoxLogin.Text, textBoxSenha.Text, textBoxNome.Text, textBoxDocumento.Text, 1, DateTime.Now, Acesso.Administrativel());
 
             if (newUser != null)
             {
