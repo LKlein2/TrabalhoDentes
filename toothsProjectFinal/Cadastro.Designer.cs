@@ -35,6 +35,9 @@
             this.labelLogin = new System.Windows.Forms.Label();
             this.groupBoxComplemento = new System.Windows.Forms.GroupBox();
             this.groupBoxAcesso = new System.Windows.Forms.GroupBox();
+            this.radioButtonSecretaria = new System.Windows.Forms.RadioButton();
+            this.radioButtonOdontologista = new System.Windows.Forms.RadioButton();
+            this.radioButtonPaciente = new System.Windows.Forms.RadioButton();
             this.textBoxCodigo = new System.Windows.Forms.TextBox();
             this.labelCodigo = new System.Windows.Forms.Label();
             this.dateTimePickerNascimento = new System.Windows.Forms.DateTimePicker();
@@ -43,9 +46,6 @@
             this.labelTelefone = new System.Windows.Forms.Label();
             this.textBoxEndereco = new System.Windows.Forms.TextBox();
             this.labelEndereco = new System.Windows.Forms.Label();
-            this.radioButtonPaciente = new System.Windows.Forms.RadioButton();
-            this.radioButtonOdontologista = new System.Windows.Forms.RadioButton();
-            this.radioButtonSecretaria = new System.Windows.Forms.RadioButton();
             this.textBoxDocumento = new System.Windows.Forms.TextBox();
             this.labelDocumento = new System.Windows.Forms.Label();
             this.textBoxNome = new System.Windows.Forms.TextBox();
@@ -134,10 +134,43 @@
             this.groupBoxAcesso.Controls.Add(this.radioButtonPaciente);
             this.groupBoxAcesso.Location = new System.Drawing.Point(49, 193);
             this.groupBoxAcesso.Name = "groupBoxAcesso";
-            this.groupBoxAcesso.Size = new System.Drawing.Size(205, 87);
+            this.groupBoxAcesso.Size = new System.Drawing.Size(283, 45);
             this.groupBoxAcesso.TabIndex = 5;
             this.groupBoxAcesso.TabStop = false;
             this.groupBoxAcesso.Text = "Acesso";
+            // 
+            // radioButtonSecretaria
+            // 
+            this.radioButtonSecretaria.AutoSize = true;
+            this.radioButtonSecretaria.Location = new System.Drawing.Point(13, 19);
+            this.radioButtonSecretaria.Name = "radioButtonSecretaria";
+            this.radioButtonSecretaria.Size = new System.Drawing.Size(73, 17);
+            this.radioButtonSecretaria.TabIndex = 9;
+            this.radioButtonSecretaria.TabStop = true;
+            this.radioButtonSecretaria.Text = "Secretaria";
+            this.radioButtonSecretaria.UseVisualStyleBackColor = true;
+            // 
+            // radioButtonOdontologista
+            // 
+            this.radioButtonOdontologista.AutoSize = true;
+            this.radioButtonOdontologista.Location = new System.Drawing.Point(102, 19);
+            this.radioButtonOdontologista.Name = "radioButtonOdontologista";
+            this.radioButtonOdontologista.Size = new System.Drawing.Size(90, 17);
+            this.radioButtonOdontologista.TabIndex = 10;
+            this.radioButtonOdontologista.TabStop = true;
+            this.radioButtonOdontologista.Text = "Odontologista";
+            this.radioButtonOdontologista.UseVisualStyleBackColor = true;
+            // 
+            // radioButtonPaciente
+            // 
+            this.radioButtonPaciente.AutoSize = true;
+            this.radioButtonPaciente.Location = new System.Drawing.Point(210, 19);
+            this.radioButtonPaciente.Name = "radioButtonPaciente";
+            this.radioButtonPaciente.Size = new System.Drawing.Size(67, 17);
+            this.radioButtonPaciente.TabIndex = 11;
+            this.radioButtonPaciente.TabStop = true;
+            this.radioButtonPaciente.Text = "Paciente";
+            this.radioButtonPaciente.UseVisualStyleBackColor = true;
             // 
             // textBoxCodigo
             // 
@@ -206,39 +239,6 @@
             this.labelEndereco.Size = new System.Drawing.Size(53, 13);
             this.labelEndereco.TabIndex = 12;
             this.labelEndereco.Text = "Endereço";
-            // 
-            // radioButtonPaciente
-            // 
-            this.radioButtonPaciente.AutoSize = true;
-            this.radioButtonPaciente.Location = new System.Drawing.Point(102, 60);
-            this.radioButtonPaciente.Name = "radioButtonPaciente";
-            this.radioButtonPaciente.Size = new System.Drawing.Size(67, 17);
-            this.radioButtonPaciente.TabIndex = 11;
-            this.radioButtonPaciente.TabStop = true;
-            this.radioButtonPaciente.Text = "Paciente";
-            this.radioButtonPaciente.UseVisualStyleBackColor = true;
-            // 
-            // radioButtonOdontologista
-            // 
-            this.radioButtonOdontologista.AutoSize = true;
-            this.radioButtonOdontologista.Location = new System.Drawing.Point(102, 39);
-            this.radioButtonOdontologista.Name = "radioButtonOdontologista";
-            this.radioButtonOdontologista.Size = new System.Drawing.Size(90, 17);
-            this.radioButtonOdontologista.TabIndex = 10;
-            this.radioButtonOdontologista.TabStop = true;
-            this.radioButtonOdontologista.Text = "Odontologista";
-            this.radioButtonOdontologista.UseVisualStyleBackColor = true;
-            // 
-            // radioButtonSecretaria
-            // 
-            this.radioButtonSecretaria.AutoSize = true;
-            this.radioButtonSecretaria.Location = new System.Drawing.Point(102, 18);
-            this.radioButtonSecretaria.Name = "radioButtonSecretaria";
-            this.radioButtonSecretaria.Size = new System.Drawing.Size(73, 17);
-            this.radioButtonSecretaria.TabIndex = 9;
-            this.radioButtonSecretaria.TabStop = true;
-            this.radioButtonSecretaria.Text = "Secretaria";
-            this.radioButtonSecretaria.UseVisualStyleBackColor = true;
             // 
             // textBoxDocumento
             // 
