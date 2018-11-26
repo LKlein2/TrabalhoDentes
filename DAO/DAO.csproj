@@ -51,6 +51,11 @@
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
       <DependentUpon>Settings.settings</DependentUpon>
     </Compile>
+    <Compile Include="toothsDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>toothsDataSet.xsd</DependentUpon>
+    </Compile>
     <Compile Include="toothsdbDataSet.cs">
       <DependentUpon>toothsdbDataSet.xsd</DependentUpon>
     </Compile>
@@ -70,6 +75,17 @@
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="toothsDataSet.xsc">
+      <DependentUpon>toothsDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="toothsDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>toothsDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="toothsDataSet.xss">
+      <DependentUpon>toothsDataSet.xsd</DependentUpon>
     </None>
     <None Include="toothsdbDataSet.xsc">
       <DependentUpon>toothsdbDataSet.xsd</DependentUpon>

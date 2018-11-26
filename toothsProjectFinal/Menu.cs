@@ -32,11 +32,7 @@ namespace toothsProjectFinal
             cadastroUsuario.Show();
         }
 
-        private void buttonSair_Click(object sender, EventArgs e)
-        {
-            this.Close();
-            // o que fazer para fechar o frmLogin ?
-        }
+       
 
         private void buttonAgenda_Click(object sender, EventArgs e)
         {

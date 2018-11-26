@@ -30,29 +30,27 @@ namespace toothsProjectFinal
         /// </summary>
         private void InitializeComponent()
         {
-            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
+            this.menuStripPrincipal = new System.Windows.Forms.MenuStrip();
             this.agendaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.consultasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.pacienteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.sairToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.labelDentistaApp = new System.Windows.Forms.Label();
-            this.menuStrip1.SuspendLayout();
+            this.menuStripPrincipal.SuspendLayout();
             this.SuspendLayout();
             // 
-            // menuStrip1
+            // menuStripPrincipal
             // 
-            this.menuStrip1.Dock = System.Windows.Forms.DockStyle.Left;
-            this.menuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
-            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.menuStripPrincipal.Dock = System.Windows.Forms.DockStyle.Left;
+            this.menuStripPrincipal.ImageScalingSize = new System.Drawing.Size(20, 20);
+            this.menuStripPrincipal.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.agendaToolStripMenuItem,
             this.consultasToolStripMenuItem,
-            this.pacienteToolStripMenuItem,
-            this.sairToolStripMenuItem});
-            this.menuStrip1.Location = new System.Drawing.Point(0, 0);
-            this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(126, 450);
-            this.menuStrip1.TabIndex = 0;
-            this.menuStrip1.Text = "menuStrip1";
+            this.pacienteToolStripMenuItem});
+            this.menuStripPrincipal.Location = new System.Drawing.Point(0, 0);
+            this.menuStripPrincipal.Name = "menuStripPrincipal";
+            this.menuStripPrincipal.Size = new System.Drawing.Size(126, 450);
+            this.menuStripPrincipal.TabIndex = 0;
+            this.menuStripPrincipal.Text = "menuStripPrincipal";
             // 
             // agendaToolStripMenuItem
             // 
@@ -71,15 +69,8 @@ namespace toothsProjectFinal
             // 
             this.pacienteToolStripMenuItem.Name = "pacienteToolStripMenuItem";
             this.pacienteToolStripMenuItem.Size = new System.Drawing.Size(113, 19);
-            this.pacienteToolStripMenuItem.Text = "Cadastro";
+            this.pacienteToolStripMenuItem.Text = "Cadastrar";
             this.pacienteToolStripMenuItem.Click += new System.EventHandler(this.buttonCadastro_Click);
-            // 
-            // sairToolStripMenuItem
-            // 
-            this.sairToolStripMenuItem.Name = "sairToolStripMenuItem";
-            this.sairToolStripMenuItem.Size = new System.Drawing.Size(113, 19);
-            this.sairToolStripMenuItem.Text = "Sair";
-            this.sairToolStripMenuItem.Click += new System.EventHandler(this.buttonSair_Click);
             // 
             // labelDentistaApp
             // 
@@ -100,12 +91,12 @@ namespace toothsProjectFinal
             this.BackgroundImage = global::toothsProjectFinal.Properties.Resources.background;
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.labelDentistaApp);
-            this.Controls.Add(this.menuStrip1);
+            this.Controls.Add(this.menuStripPrincipal);
             this.Name = "Menu";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "DentistaApp";
-            this.menuStrip1.ResumeLayout(false);
-            this.menuStrip1.PerformLayout();
+            this.menuStripPrincipal.ResumeLayout(false);
+            this.menuStripPrincipal.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -113,11 +104,10 @@ namespace toothsProjectFinal
 
         #endregion
 
-        private System.Windows.Forms.MenuStrip menuStrip1;
+        private System.Windows.Forms.MenuStrip menuStripPrincipal;
         private System.Windows.Forms.ToolStripMenuItem agendaToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem consultasToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem pacienteToolStripMenuItem;
         private System.Windows.Forms.Label labelDentistaApp;
-        private System.Windows.Forms.ToolStripMenuItem sairToolStripMenuItem;
     }
 }

@@ -74,7 +74,7 @@ namespace DAO
                 if (model.Documento != null)
                     comando.Parameters.Add("@documento", SqlDbType.Text).Value = model.Senha;
                 if (model.TipoAcesso != 0)
-                    comando.Parameters.Add("@tipoAcesso", SqlDbType.Text).Value = model.Senha;
+                    comando.Parameters.Add("@tipoAcesso", SqlDbType.Int).Value = model.TipoAcesso;
                 if (model.DataCadastro != null)
                     comando.Parameters.Add("@datacadastro", SqlDbType.DateTime).Value = model.DataCadastro;
                 if (model.Criador != null)
@@ -82,7 +82,8 @@ namespace DAO
                 if (model.Criador != null)
                     comando.Parameters.Add("@tipocriador", SqlDbType.Int).Value = model.Criador.tipoCriador();
 
-                model.ID = int.Parse(comando.ExecuteScalar().ToString());
+                //model.ID = int.Parse(comando.ExecuteScalar().ToString());
+
             }
             return model;
         }
