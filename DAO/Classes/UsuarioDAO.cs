@@ -66,7 +66,7 @@ namespace DAO
             {
                 string sql = MontaSqlInsert(model);
                 comando.CommandType = CommandType.Text;
-                comando.CommandText = sql;
+                comando.CommandText = (sql);
 
                 comando.Parameters.Add("@login", SqlDbType.Text).Value = model.Login;
                 comando.Parameters.Add("@senha", SqlDbType.Text).Value = model.Senha;
@@ -82,7 +82,14 @@ namespace DAO
                 if (model.Criador != null)
                     comando.Parameters.Add("@tipocriador", SqlDbType.Int).Value = model.Criador.tipoCriador();
 
-                //model.ID = int.Parse(comando.ExecuteScalar().ToString());
+                // model.ID = int.Parse(comando.ExecuteScalar().ToString());
+
+                comando.ExecuteScalar();
+
+                comando.BeginExecuteNonQuery();
+                
+                
+                
 
             }
             return model;
@@ -95,7 +102,7 @@ namespace DAO
             if (model.Documento != null)
                 sql += ", documento ";
             if (model.TipoAcesso != 0)
-                sql += ", tipoaesso";
+                sql += ", tipoacesso";
             if (model.DataCadastro != null)
                 sql += ", datacadastro ";
             if (model.Criador.idCriador() != null)
@@ -107,14 +114,14 @@ namespace DAO
             if (model.Documento != null)
                 sql += ", @documento ";
             if (model.TipoAcesso != 0)
-                sql += ", @tipoaesso";
+                sql += ", @tipoAcesso";
             if (model.DataCadastro != null)
                 sql += ", @datacadastro ";
             if (model.Criador != null)
                 sql += ", @idCriador ";
             if (model.Criador != null)
-                sql += ", @tipoCriador ";
-            sql += "); Select @Identity";
+                sql += ", @tipoCriador )";
+            //sql += "); Select @id";
 
             return sql;
         }

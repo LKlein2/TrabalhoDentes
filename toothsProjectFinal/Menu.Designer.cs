@@ -48,27 +48,27 @@ namespace toothsProjectFinal
             this.pacienteToolStripMenuItem});
             this.menuStripPrincipal.Location = new System.Drawing.Point(0, 0);
             this.menuStripPrincipal.Name = "menuStripPrincipal";
-            this.menuStripPrincipal.Size = new System.Drawing.Size(126, 450);
+            this.menuStripPrincipal.Size = new System.Drawing.Size(77, 450);
             this.menuStripPrincipal.TabIndex = 0;
             this.menuStripPrincipal.Text = "menuStripPrincipal";
             // 
             // agendaToolStripMenuItem
             // 
             this.agendaToolStripMenuItem.Name = "agendaToolStripMenuItem";
-            this.agendaToolStripMenuItem.Size = new System.Drawing.Size(113, 19);
+            this.agendaToolStripMenuItem.Size = new System.Drawing.Size(64, 19);
             this.agendaToolStripMenuItem.Text = "Agenda";
             this.agendaToolStripMenuItem.Click += new System.EventHandler(this.buttonAgenda_Click);
             // 
             // consultasToolStripMenuItem
             // 
             this.consultasToolStripMenuItem.Name = "consultasToolStripMenuItem";
-            this.consultasToolStripMenuItem.Size = new System.Drawing.Size(113, 19);
+            this.consultasToolStripMenuItem.Size = new System.Drawing.Size(64, 19);
             this.consultasToolStripMenuItem.Text = "Consultas";
             // 
             // pacienteToolStripMenuItem
             // 
             this.pacienteToolStripMenuItem.Name = "pacienteToolStripMenuItem";
-            this.pacienteToolStripMenuItem.Size = new System.Drawing.Size(113, 19);
+            this.pacienteToolStripMenuItem.Size = new System.Drawing.Size(64, 19);
             this.pacienteToolStripMenuItem.Text = "Cadastrar";
             this.pacienteToolStripMenuItem.Click += new System.EventHandler(this.buttonCadastro_Click);
             // 
@@ -94,7 +94,6 @@ namespace toothsProjectFinal
             this.Controls.Add(this.menuStripPrincipal);
             this.Name = "Menu";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "DentistaApp";
             this.menuStripPrincipal.ResumeLayout(false);
             this.menuStripPrincipal.PerformLayout();
             this.ResumeLayout(false);

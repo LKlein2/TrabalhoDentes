@@ -42,6 +42,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Classes\Connection.cs" />
+    <Compile Include="Classes\ConsultaDAO.cs" />
     <Compile Include="Interfaces\IConnection.cs" />
     <Compile Include="Classes\UsuarioDAO.cs" />
     <Compile Include="Interfaces\IDAO.cs" />

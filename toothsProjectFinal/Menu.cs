@@ -21,7 +21,8 @@ namespace toothsProjectFinal
             if (autenticavel != null)
             {
                 Acesso.setaAcesso(autenticavel);
-                this.Text = autenticavel.Autenticacao();
+                this.Text += "DentistaApp - " + autenticavel.Autenticacao();
+                Console.WriteLine(autenticavel.Autenticacao());
             }
             InitializeComponent();
         }

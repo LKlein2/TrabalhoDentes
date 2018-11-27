@@ -52,6 +52,9 @@ namespace toothsProjectFinal
                 labelMensagem.Text = "Não foi possível inserir!";
                 labelMensagem.ForeColor = Color.Red;
             }
+
+            conexao.Fechar();
+
         }
 
        
