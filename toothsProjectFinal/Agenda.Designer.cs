@@ -30,118 +30,176 @@
         {
             this.monthCalendar1 = new System.Windows.Forms.MonthCalendar();
             this.groupDentista = new System.Windows.Forms.GroupBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.button1 = new System.Windows.Forms.Button();
-            this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.button2 = new System.Windows.Forms.Button();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.textBox4 = new System.Windows.Forms.TextBox();
-            this.button3 = new System.Windows.Forms.Button();
+            this.buttonBuscarDentista = new System.Windows.Forms.Button();
+            this.txtNomeDentista = new System.Windows.Forms.TextBox();
+            this.txtIdDentista = new System.Windows.Forms.TextBox();
+            this.groupPaciente = new System.Windows.Forms.GroupBox();
+            this.buttonBuscarPaciente = new System.Windows.Forms.Button();
+            this.txtNomePaciente = new System.Windows.Forms.TextBox();
+            this.txtIdPaciente = new System.Windows.Forms.TextBox();
+            this.buttonCarregarAgenda = new System.Windows.Forms.Button();
+            this.listViewAgenda = new System.Windows.Forms.ListView();
+            this.columnDentista = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnPaciente = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnInicio = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnFim = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnObs = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.groupDentista.SuspendLayout();
-            this.groupBox2.SuspendLayout();
+            this.groupPaciente.SuspendLayout();
             this.SuspendLayout();
             // 
             // monthCalendar1
             // 
-            this.monthCalendar1.Location = new System.Drawing.Point(513, 18);
+            this.monthCalendar1.Location = new System.Drawing.Point(385, 15);
+            this.monthCalendar1.Margin = new System.Windows.Forms.Padding(7, 7, 7, 7);
             this.monthCalendar1.Name = "monthCalendar1";
             this.monthCalendar1.TabIndex = 0;
             // 
             // groupDentista
             // 
-            this.groupDentista.Controls.Add(this.button1);
-            this.groupDentista.Controls.Add(this.textBox2);
-            this.groupDentista.Controls.Add(this.textBox1);
-            this.groupDentista.Location = new System.Drawing.Point(13, 18);
+            this.groupDentista.Controls.Add(this.buttonBuscarDentista);
+            this.groupDentista.Controls.Add(this.txtNomeDentista);
+            this.groupDentista.Controls.Add(this.txtIdDentista);
+            this.groupDentista.Location = new System.Drawing.Point(10, 15);
+            this.groupDentista.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.groupDentista.Name = "groupDentista";
-            this.groupDentista.Size = new System.Drawing.Size(488, 58);
+            this.groupDentista.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupDentista.Size = new System.Drawing.Size(366, 47);
             this.groupDentista.TabIndex = 1;
             this.groupDentista.TabStop = false;
-            this.groupDentista.Text = "groupBox1";
+            this.groupDentista.Text = "Dentista";
             // 
-            // textBox1
+            // buttonBuscarDentista
             // 
-            this.textBox1.Location = new System.Drawing.Point(6, 27);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(100, 22);
-            this.textBox1.TabIndex = 0;
+            this.buttonBuscarDentista.Location = new System.Drawing.Point(307, 17);
+            this.buttonBuscarDentista.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.buttonBuscarDentista.Name = "buttonBuscarDentista";
+            this.buttonBuscarDentista.Size = new System.Drawing.Size(52, 19);
+            this.buttonBuscarDentista.TabIndex = 2;
+            this.buttonBuscarDentista.Text = "Buscar";
+            this.buttonBuscarDentista.UseVisualStyleBackColor = true;
             // 
-            // textBox2
+            // txtNomeDentista
             // 
-            this.textBox2.Location = new System.Drawing.Point(112, 27);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(278, 22);
-            this.textBox2.TabIndex = 1;
+            this.txtNomeDentista.Location = new System.Drawing.Point(94, 17);
+            this.txtNomeDentista.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtNomeDentista.Name = "txtNomeDentista";
+            this.txtNomeDentista.Size = new System.Drawing.Size(210, 20);
+            this.txtNomeDentista.TabIndex = 1;
             // 
-            // button1
+            // txtIdDentista
             // 
-            this.button1.Location = new System.Drawing.Point(396, 26);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(70, 23);
-            this.button1.TabIndex = 2;
-            this.button1.Text = "button1";
-            this.button1.UseVisualStyleBackColor = true;
+            this.txtIdDentista.Location = new System.Drawing.Point(14, 17);
+            this.txtIdDentista.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtIdDentista.Name = "txtIdDentista";
+            this.txtIdDentista.Size = new System.Drawing.Size(76, 20);
+            this.txtIdDentista.TabIndex = 0;
             // 
-            // groupBox2
+            // groupPaciente
             // 
-            this.groupBox2.Controls.Add(this.button2);
-            this.groupBox2.Controls.Add(this.textBox3);
-            this.groupBox2.Controls.Add(this.textBox4);
-            this.groupBox2.Location = new System.Drawing.Point(13, 93);
-            this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(488, 58);
-            this.groupBox2.TabIndex = 2;
-            this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "groupBox2";
+            this.groupPaciente.Controls.Add(this.buttonBuscarPaciente);
+            this.groupPaciente.Controls.Add(this.txtNomePaciente);
+            this.groupPaciente.Controls.Add(this.txtIdPaciente);
+            this.groupPaciente.Location = new System.Drawing.Point(10, 76);
+            this.groupPaciente.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupPaciente.Name = "groupPaciente";
+            this.groupPaciente.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupPaciente.Size = new System.Drawing.Size(366, 47);
+            this.groupPaciente.TabIndex = 2;
+            this.groupPaciente.TabStop = false;
+            this.groupPaciente.Text = "Paciente";
             // 
-            // button2
+            // buttonBuscarPaciente
             // 
-            this.button2.Location = new System.Drawing.Point(396, 26);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(70, 23);
-            this.button2.TabIndex = 2;
-            this.button2.Text = "button2";
-            this.button2.UseVisualStyleBackColor = true;
+            this.buttonBuscarPaciente.Location = new System.Drawing.Point(307, 17);
+            this.buttonBuscarPaciente.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.buttonBuscarPaciente.Name = "buttonBuscarPaciente";
+            this.buttonBuscarPaciente.Size = new System.Drawing.Size(52, 19);
+            this.buttonBuscarPaciente.TabIndex = 2;
+            this.buttonBuscarPaciente.Text = "Buscar";
+            this.buttonBuscarPaciente.UseVisualStyleBackColor = true;
             // 
-            // textBox3
+            // txtNomePaciente
             // 
-            this.textBox3.Location = new System.Drawing.Point(112, 27);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(278, 22);
-            this.textBox3.TabIndex = 1;
+            this.txtNomePaciente.Location = new System.Drawing.Point(94, 17);
+            this.txtNomePaciente.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtNomePaciente.Name = "txtNomePaciente";
+            this.txtNomePaciente.Size = new System.Drawing.Size(210, 20);
+            this.txtNomePaciente.TabIndex = 1;
             // 
-            // textBox4
+            // txtIdPaciente
             // 
-            this.textBox4.Location = new System.Drawing.Point(6, 27);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(100, 22);
-            this.textBox4.TabIndex = 0;
+            this.txtIdPaciente.Location = new System.Drawing.Point(14, 17);
+            this.txtIdPaciente.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtIdPaciente.Name = "txtIdPaciente";
+            this.txtIdPaciente.Size = new System.Drawing.Size(76, 20);
+            this.txtIdPaciente.TabIndex = 0;
             // 
-            // button3
+            // buttonCarregarAgenda
             // 
-            this.button3.Location = new System.Drawing.Point(326, 193);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(175, 32);
-            this.button3.TabIndex = 3;
-            this.button3.Text = "button3";
-            this.button3.UseVisualStyleBackColor = true;
+            this.buttonCarregarAgenda.Location = new System.Drawing.Point(245, 151);
+            this.buttonCarregarAgenda.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.buttonCarregarAgenda.Name = "buttonCarregarAgenda";
+            this.buttonCarregarAgenda.Size = new System.Drawing.Size(131, 26);
+            this.buttonCarregarAgenda.TabIndex = 3;
+            this.buttonCarregarAgenda.Text = "CARREGAR AGENDA";
+            this.buttonCarregarAgenda.UseVisualStyleBackColor = true;
+            // 
+            // listViewAgenda
+            // 
+            this.listViewAgenda.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.columnDentista,
+            this.columnPaciente,
+            this.columnInicio,
+            this.columnFim,
+            this.columnObs});
+            this.listViewAgenda.Location = new System.Drawing.Point(10, 196);
+            this.listViewAgenda.Name = "listViewAgenda";
+            this.listViewAgenda.Size = new System.Drawing.Size(602, 158);
+            this.listViewAgenda.TabIndex = 4;
+            this.listViewAgenda.UseCompatibleStateImageBehavior = false;
+            this.listViewAgenda.View = System.Windows.Forms.View.Details;
+            // 
+            // columnDentista
+            // 
+            this.columnDentista.Text = "Dentista";
+            this.columnDentista.Width = 123;
+            // 
+            // columnPaciente
+            // 
+            this.columnPaciente.Text = "Paciente";
+            this.columnPaciente.Width = 121;
+            // 
+            // columnInicio
+            // 
+            this.columnInicio.Text = "Inicio";
+            // 
+            // columnFim
+            // 
+            this.columnFim.Text = "Fim";
+            // 
+            // columnObs
+            // 
+            this.columnObs.Text = "Observações";
+            this.columnObs.Width = 233;
             // 
             // Agenda
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.button3);
-            this.Controls.Add(this.groupBox2);
+            this.ClientSize = new System.Drawing.Size(622, 366);
+            this.Controls.Add(this.listViewAgenda);
+            this.Controls.Add(this.buttonCarregarAgenda);
+            this.Controls.Add(this.groupPaciente);
             this.Controls.Add(this.groupDentista);
             this.Controls.Add(this.monthCalendar1);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "Agenda";
             this.Text = "Agenda";
             this.groupDentista.ResumeLayout(false);
             this.groupDentista.PerformLayout();
-            this.groupBox2.ResumeLayout(false);
-            this.groupBox2.PerformLayout();
+            this.groupPaciente.ResumeLayout(false);
+            this.groupPaciente.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -150,13 +208,19 @@
 
         private System.Windows.Forms.MonthCalendar monthCalendar1;
         private System.Windows.Forms.GroupBox groupDentista;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.GroupBox groupBox2;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.TextBox textBox4;
-        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Button buttonBuscarDentista;
+        private System.Windows.Forms.TextBox txtNomeDentista;
+        private System.Windows.Forms.TextBox txtIdDentista;
+        private System.Windows.Forms.GroupBox groupPaciente;
+        private System.Windows.Forms.Button buttonBuscarPaciente;
+        private System.Windows.Forms.TextBox txtNomePaciente;
+        private System.Windows.Forms.TextBox txtIdPaciente;
+        private System.Windows.Forms.Button buttonCarregarAgenda;
+        private System.Windows.Forms.ListView listViewAgenda;
+        private System.Windows.Forms.ColumnHeader columnDentista;
+        private System.Windows.Forms.ColumnHeader columnPaciente;
+        private System.Windows.Forms.ColumnHeader columnInicio;
+        private System.Windows.Forms.ColumnHeader columnFim;
+        private System.Windows.Forms.ColumnHeader columnObs;
     }
 }

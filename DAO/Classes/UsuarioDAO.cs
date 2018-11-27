@@ -82,7 +82,7 @@ namespace DAO
                 if (model.Criador != null)
                     comando.Parameters.Add("@tipocriador", SqlDbType.Int).Value = model.Criador.tipoCriador();
 
-                //model.ID = int.Parse(comando.ExecuteScalar().ToString());
+                model.ID = int.Parse(comando.ExecuteScalar().ToString());
 
             }
             return model;
