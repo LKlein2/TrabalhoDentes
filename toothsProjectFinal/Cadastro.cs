@@ -57,6 +57,9 @@ namespace toothsProjectFinal
 
         }
 
-       
+        private void groupBoxInfo_Enter(object sender, EventArgs e)
+        {
+
+        }
     }
 }

@@ -82,7 +82,7 @@ namespace DAO
                 if (model.Criador != null)
                     comando.Parameters.Add("@tipocriador", SqlDbType.Int).Value = model.Criador.tipoCriador();
 
-                model.ID = int.Parse(comando.ExecuteScalar().ToString());
+                comando.ExecuteScalar();
 
             }
             return model;
@@ -95,7 +95,7 @@ namespace DAO
             if (model.Documento != null)
                 sql += ", documento ";
             if (model.TipoAcesso != 0)
-                sql += ", tipoaesso";
+                sql += ", tipoAcesso";
             if (model.DataCadastro != null)
                 sql += ", datacadastro ";
             if (model.Criador.idCriador() != null)
@@ -107,14 +107,14 @@ namespace DAO
             if (model.Documento != null)
                 sql += ", @documento ";
             if (model.TipoAcesso != 0)
-                sql += ", @tipoaesso";
+                sql += ", @tipoAcesso";
             if (model.DataCadastro != null)
                 sql += ", @datacadastro ";
             if (model.Criador != null)
                 sql += ", @idCriador ";
             if (model.Criador != null)
                 sql += ", @tipoCriador ";
-            sql += "); Select @Identity";
+            sql += ");";
 
             return sql;
         }
