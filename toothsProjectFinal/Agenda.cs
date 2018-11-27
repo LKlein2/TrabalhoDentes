@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Model;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,10 +13,20 @@ namespace toothsProjectFinal
 {
     public partial class Agenda : Form
     {
+        private Usuario dentista;
+        private Usuario paciente;
+
         public Agenda()
         {
+            if (Acesso.TipoUsuario() == 2)
+            {
+                
+            }
+            else if (Acesso.TipoUsuario() == 4)
+            {
+
+            }
             InitializeComponent();
-       
         }
     }
 }
