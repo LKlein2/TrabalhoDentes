@@ -174,6 +174,7 @@
             // 
             // textBoxCodigo
             // 
+            this.textBoxCodigo.Enabled = false;
             this.textBoxCodigo.Location = new System.Drawing.Point(116, 19);
             this.textBoxCodigo.Name = "textBoxCodigo";
             this.textBoxCodigo.Size = new System.Drawing.Size(114, 20);
@@ -288,7 +289,7 @@
             this.buttonCadastrarAtualizar.Name = "buttonCadastrarAtualizar";
             this.buttonCadastrarAtualizar.Size = new System.Drawing.Size(120, 23);
             this.buttonCadastrarAtualizar.TabIndex = 3;
-            this.buttonCadastrarAtualizar.Text = "Cadastrar/Atualizar";
+            this.buttonCadastrarAtualizar.Text = "Cadastrar";
             this.buttonCadastrarAtualizar.UseVisualStyleBackColor = true;
             this.buttonCadastrarAtualizar.Click += new System.EventHandler(this.buttonCadastrar_Click);
             // 
@@ -309,7 +310,6 @@
             this.groupBoxInfo.TabIndex = 4;
             this.groupBoxInfo.TabStop = false;
             this.groupBoxInfo.Text = "Mensagem Sistema";
-            this.groupBoxInfo.Enter += new System.EventHandler(this.groupBoxInfo_Enter);
             // 
             // frmCadastro
             // 

@@ -35,6 +35,8 @@ namespace toothsProjectFinal
             this.consultasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.pacienteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.labelDentistaApp = new System.Windows.Forms.Label();
+            this.cadastrarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.alterarConsultarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStripPrincipal.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -48,29 +50,31 @@ namespace toothsProjectFinal
             this.pacienteToolStripMenuItem});
             this.menuStripPrincipal.Location = new System.Drawing.Point(0, 0);
             this.menuStripPrincipal.Name = "menuStripPrincipal";
-            this.menuStripPrincipal.Size = new System.Drawing.Size(77, 450);
+            this.menuStripPrincipal.Size = new System.Drawing.Size(126, 450);
             this.menuStripPrincipal.TabIndex = 0;
             this.menuStripPrincipal.Text = "menuStripPrincipal";
             // 
             // agendaToolStripMenuItem
             // 
             this.agendaToolStripMenuItem.Name = "agendaToolStripMenuItem";
-            this.agendaToolStripMenuItem.Size = new System.Drawing.Size(64, 19);
+            this.agendaToolStripMenuItem.Size = new System.Drawing.Size(113, 19);
             this.agendaToolStripMenuItem.Text = "Agenda";
             this.agendaToolStripMenuItem.Click += new System.EventHandler(this.buttonAgenda_Click);
             // 
             // consultasToolStripMenuItem
             // 
             this.consultasToolStripMenuItem.Name = "consultasToolStripMenuItem";
-            this.consultasToolStripMenuItem.Size = new System.Drawing.Size(64, 19);
+            this.consultasToolStripMenuItem.Size = new System.Drawing.Size(113, 19);
             this.consultasToolStripMenuItem.Text = "Consultas";
             // 
             // pacienteToolStripMenuItem
             // 
+            this.pacienteToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.cadastrarToolStripMenuItem,
+            this.alterarConsultarToolStripMenuItem});
             this.pacienteToolStripMenuItem.Name = "pacienteToolStripMenuItem";
-            this.pacienteToolStripMenuItem.Size = new System.Drawing.Size(64, 19);
-            this.pacienteToolStripMenuItem.Text = "Cadastrar";
-            this.pacienteToolStripMenuItem.Click += new System.EventHandler(this.buttonCadastro_Click);
+            this.pacienteToolStripMenuItem.Size = new System.Drawing.Size(113, 19);
+            this.pacienteToolStripMenuItem.Text = "Usuario";
             // 
             // labelDentistaApp
             // 
@@ -83,6 +87,19 @@ namespace toothsProjectFinal
             this.labelDentistaApp.Size = new System.Drawing.Size(216, 42);
             this.labelDentistaApp.TabIndex = 1;
             this.labelDentistaApp.Text = "Dentista App";
+            // 
+            // cadastrarToolStripMenuItem
+            // 
+            this.cadastrarToolStripMenuItem.Name = "cadastrarToolStripMenuItem";
+            this.cadastrarToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.cadastrarToolStripMenuItem.Text = "Cadastrar";
+            this.cadastrarToolStripMenuItem.Click += new System.EventHandler(this.buttonCadastrar_Click);
+            // 
+            // alterarConsultarToolStripMenuItem
+            // 
+            this.alterarConsultarToolStripMenuItem.Name = "alterarConsultarToolStripMenuItem";
+            this.alterarConsultarToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.alterarConsultarToolStripMenuItem.Text = "Alterar/Consultar";
             // 
             // Menu
             // 
@@ -108,5 +125,7 @@ namespace toothsProjectFinal
         private System.Windows.Forms.ToolStripMenuItem consultasToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem pacienteToolStripMenuItem;
         private System.Windows.Forms.Label labelDentistaApp;
+        private System.Windows.Forms.ToolStripMenuItem cadastrarToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem alterarConsultarToolStripMenuItem;
     }
 }
