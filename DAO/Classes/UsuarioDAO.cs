@@ -36,6 +36,9 @@ namespace DAO
                 if (model.Documento != null) comando.Parameters.Add("@documento", SqlDbType.Text).Value = model.Documento;
                 if (model.TipoAcesso != 0) comando.Parameters.Add("@tipoAcesso", SqlDbType.Text).Value = model.TipoAcesso;
                 if (model.DataCadastro != null) comando.Parameters.Add("datacadastro", SqlDbType.DateTime).Value = model.DataCadastro;
+                if (model.Endereco != null) comando.Parameters.Add("@endereco", SqlDbType.Text).Value = model.Endereco;
+                if (model.Contato != null) comando.Parameters.Add("@contato", SqlDbType.Text).Value = model.Contato;
+                if (model.DataNascimento != null) comando.Parameters.Add("dataNascimento", SqlDbType.DateTime).Value = model.DataNascimento;
 
                 comando.ExecuteNonQuery();
             }
@@ -51,6 +54,10 @@ namespace DAO
             if (usuario.Documento != null)      sql += ", documento=@documento ";
             if (usuario.TipoAcesso != 0)        sql += ", tipacesso=@tipoacesso ";
             if (usuario.DataCadastro != null)   sql += ", datacadastro=@datacadastro ";
+            if (usuario.Endereco != null) sql += ", endereco=@endereco ";
+            if (usuario.Contato != null) sql += ", contato=@contato ";
+            if (usuario.DataNascimento != null) sql += ", dataNascimento=@dataNascimento ";
+            sql += "where id = @id";
 
             return sql;
         }
