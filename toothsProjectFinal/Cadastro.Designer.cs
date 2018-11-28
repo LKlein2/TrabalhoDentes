@@ -323,6 +323,7 @@
             this.Controls.Add(this.groupBoxLogin);
             this.MaximizeBox = false;
             this.Name = "frmCadastro";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Dentista App - Cadastro Paciente";
             this.groupBoxLogin.ResumeLayout(false);
             this.groupBoxLogin.PerformLayout();

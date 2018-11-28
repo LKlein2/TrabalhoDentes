@@ -34,9 +34,9 @@ namespace toothsProjectFinal
             this.agendaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.consultasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.pacienteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.labelDentistaApp = new System.Windows.Forms.Label();
             this.cadastrarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.alterarConsultarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.labelDentistaApp = new System.Windows.Forms.Label();
             this.menuStripPrincipal.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -76,18 +76,6 @@ namespace toothsProjectFinal
             this.pacienteToolStripMenuItem.Size = new System.Drawing.Size(113, 19);
             this.pacienteToolStripMenuItem.Text = "Usuario";
             // 
-            // labelDentistaApp
-            // 
-            this.labelDentistaApp.AutoSize = true;
-            this.labelDentistaApp.BackColor = System.Drawing.Color.Transparent;
-            this.labelDentistaApp.Font = new System.Drawing.Font("Tahoma", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelDentistaApp.ImageAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.labelDentistaApp.Location = new System.Drawing.Point(346, 188);
-            this.labelDentistaApp.Name = "labelDentistaApp";
-            this.labelDentistaApp.Size = new System.Drawing.Size(216, 42);
-            this.labelDentistaApp.TabIndex = 1;
-            this.labelDentistaApp.Text = "Dentista App";
-            // 
             // cadastrarToolStripMenuItem
             // 
             this.cadastrarToolStripMenuItem.Name = "cadastrarToolStripMenuItem";
@@ -100,6 +88,19 @@ namespace toothsProjectFinal
             this.alterarConsultarToolStripMenuItem.Name = "alterarConsultarToolStripMenuItem";
             this.alterarConsultarToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.alterarConsultarToolStripMenuItem.Text = "Alterar/Consultar";
+            this.alterarConsultarToolStripMenuItem.Click += new System.EventHandler(this.buttonAlterarCadastro_Click);
+            // 
+            // labelDentistaApp
+            // 
+            this.labelDentistaApp.AutoSize = true;
+            this.labelDentistaApp.BackColor = System.Drawing.Color.Transparent;
+            this.labelDentistaApp.Font = new System.Drawing.Font("Tahoma", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelDentistaApp.ImageAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.labelDentistaApp.Location = new System.Drawing.Point(346, 188);
+            this.labelDentistaApp.Name = "labelDentistaApp";
+            this.labelDentistaApp.Size = new System.Drawing.Size(216, 42);
+            this.labelDentistaApp.TabIndex = 1;
+            this.labelDentistaApp.Text = "Dentista App";
             // 
             // Menu
             // 

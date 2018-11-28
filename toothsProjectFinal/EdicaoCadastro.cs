@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace toothsProjectFinal
 {
-    public partial class EdicaoCadastro : Form
+    public partial class frmEdicaoCadastro : Form
     {
-        public EdicaoCadastro()
+        public frmEdicaoCadastro()
         {
             InitializeComponent();
         }

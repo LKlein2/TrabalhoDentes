@@ -41,6 +41,12 @@ namespace toothsProjectFinal
             frmCadastro cadastroUsuario = new frmCadastro();
             cadastroUsuario.Show();
         }
+
+        private void buttonAlterarCadastro_Click(object sender, EventArgs e)
+        {
+            frmEdicaoCadastro editarCadastro = new frmEdicaoCadastro();
+            editarCadastro.Show();
+        }
     }
 
     public static class Acesso
