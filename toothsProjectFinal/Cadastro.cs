@@ -39,7 +39,9 @@ namespace toothsProjectFinal
 
             UsuarioDao usuarioDao = new UsuarioDao(conexao);
 
-            Usuario newUser = new Usuario(textBoxLogin.Text, textBoxSenha.Text, textBoxNome.Text, textBoxDocumento.Text, 1, DateTime.Now, Acesso.Administrativel());
+            Usuario newUser = new Usuario(textBoxLogin.Text, textBoxSenha.Text, textBoxNome.Text, textBoxDocumento.Text, 1,
+                                            DateTime.Now, Acesso.Administrativel(), textBoxEndereco.Text, textBoxTelefone.Text,
+                                            dateTimePickerNascimento.Value);
 
             if (newUser != null)
             {
