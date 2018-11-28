@@ -25,15 +25,7 @@ namespace toothsProjectFinal
                 Console.WriteLine(autenticavel.Autenticacao());
             }
             InitializeComponent();
-        }
-
-        private void buttonCadastro_Click(object sender, EventArgs e)
-        {
-            frmCadastro cadastroUsuario = new frmCadastro();
-            cadastroUsuario.Show();
-        }
-
-       
+        }    
 
         private void buttonAgenda_Click(object sender, EventArgs e)
         {
@@ -42,6 +34,18 @@ namespace toothsProjectFinal
                 Agenda mostraAgenda = new Agenda();
                 mostraAgenda.Show();
             }
+        }
+
+        private void buttonCadastrar_Click(object sender, EventArgs e)
+        {
+            frmCadastro cadastroUsuario = new frmCadastro();
+            cadastroUsuario.Show();
+        }
+
+        private void buttonAlterarCadastro_Click(object sender, EventArgs e)
+        {
+            frmEdicaoCadastro editarCadastro = new frmEdicaoCadastro();
+            editarCadastro.Show();
         }
     }
 

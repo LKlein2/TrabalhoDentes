@@ -81,8 +81,14 @@ namespace DAO
                     comando.Parameters.Add("@idcriador", SqlDbType.Int).Value = model.Criador.idCriador();
                 if (model.Criador != null)
                     comando.Parameters.Add("@tipocriador", SqlDbType.Int).Value = model.Criador.tipoCriador();
+                if (model.Endereco != null)
+                    comando.Parameters.Add("@endereco", SqlDbType.Text).Value = model.Endereco;
+                if (model.Contato != null)
+                    comando.Parameters.Add("@contato", SqlDbType.Text).Value = model.Contato;
+                if (model.DataNascimento != null)
+                    comando.Parameters.Add("@dataNascimento", SqlDbType.DateTime).Value = model.DataNascimento;
 
-                model.ID = int.Parse(comando.ExecuteScalar().ToString());
+                comando.ExecuteScalar();
 
             }
             return model;
@@ -95,26 +101,38 @@ namespace DAO
             if (model.Documento != null)
                 sql += ", documento ";
             if (model.TipoAcesso != 0)
-                sql += ", tipoaesso";
+                sql += ", tipoAcesso";
             if (model.DataCadastro != null)
                 sql += ", datacadastro ";
-            if (model.Criador.idCriador() != null)
+            if (model.Criador != null)
                 sql += ", idCriador ";
-            if (model.Criador.tipoCriador() != null)
+            if (model.Criador != null)
                 sql += ", tipoCriador ";
+            if (model.Endereco != null)
+                sql += ", endereco ";
+            if (model.Contato != null)
+                sql += ", contato ";
+            if (model.DataNascimento != null)
+                sql += ", dataNascimento";
             sql += ") values (";
             sql += "@login, @senha, @nome";
             if (model.Documento != null)
                 sql += ", @documento ";
             if (model.TipoAcesso != 0)
-                sql += ", @tipoaesso";
+                sql += ", @tipoAcesso";
             if (model.DataCadastro != null)
                 sql += ", @datacadastro ";
             if (model.Criador != null)
                 sql += ", @idCriador ";
             if (model.Criador != null)
                 sql += ", @tipoCriador ";
-            sql += "); Select @Identity";
+            if (model.Endereco != null)
+                sql += ", @endereco ";
+            if (model.Contato != null)
+                sql += ", @contato ";
+            if (model.DataNascimento != null)
+                sql += ", @dataNascimento";
+            sql += ");";
 
             return sql;
         }

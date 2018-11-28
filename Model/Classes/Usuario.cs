@@ -20,6 +20,9 @@ namespace Model
         // 4 - Paciente.
         private DateTime dataCadastro;
         private IAdministrativel criador;
+        private string endereco;
+        private string contato;
+        private DateTime dataNascimento;
 
         public Usuario() { }
 
@@ -40,7 +43,8 @@ namespace Model
         }
 
         public Usuario(string login, string senha, string nome, string documento, int tipoAcesso, 
-                        DateTime dataCadastro, IAdministrativel criador)
+                        DateTime dataCadastro, IAdministrativel criador, string endereco, string contato,
+                        DateTime dataNascimento)
         {
             this.Login = login;
             this.Senha = senha;
@@ -49,6 +53,9 @@ namespace Model
             this.TipoAcesso = tipoAcesso;
             this.DataCadastro = dataCadastro;
             this.Criador = criador;
+            this.Endereco = endereco;
+            this.Contato = contato;
+            this.dataNascimento = dataNascimento;
         }
 
         public int ID { get => id; set => id = value; }
@@ -59,5 +66,8 @@ namespace Model
         public int TipoAcesso { get => tipoAcesso; set => tipoAcesso = value; }
         public DateTime DataCadastro { get => dataCadastro; set => dataCadastro = value; }
         public IAdministrativel Criador { get => criador; set => criador = value; }
+        public string Endereco { get => endereco; set => endereco = value; }
+        public string Contato { get => contato; set => contato = value; }
+        public DateTime DataNascimento { get => dataNascimento; set => dataNascimento = value; }
     }
 }

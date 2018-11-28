@@ -33,14 +33,34 @@ namespace toothsProjectFinal
 
         private void buttonCadastrar_Click(object sender, EventArgs e)
         {
-            
             IConnection conexao = new Connection();
             conexao.Abrir();
 
             UsuarioDao usuarioDao = new UsuarioDao(conexao);
 
-            Usuario newUser = new Usuario(textBoxLogin.Text, textBoxSenha.Text, textBoxNome.Text, textBoxDocumento.Text, 1, DateTime.Now, Acesso.Administrativel());
+            int rbc = 0;
+            if (radioButtonOdontologista.Checked)
+            { 
+                rbc = 2;
+            }
+            else if (radioButtonSecretaria.Checked)
+            { 
+                rbc = 3;
+            }
+            else if (radioButtonPaciente.Checked)
+            { 
+                rbc = 4;
+            }
+            else
+            { 
+                labelMensagem.Text = "Selecione modo de acesso";
+                labelMensagem.ForeColor = Color.Red;
+                return;
+            }
 
+            Usuario newUser = new Usuario(textBoxLogin.Text, textBoxSenha.Text, textBoxNome.Text, textBoxDocumento.Text, rbc,
+                                            DateTime.Now, Acesso.Administrativel(), textBoxEndereco.Text, textBoxTelefone.Text,
+                                            dateTimePickerNascimento.Value);
             if (newUser != null)
             {
                 usuarioDao.Inserir(newUser);
@@ -54,9 +74,7 @@ namespace toothsProjectFinal
             }
 
             conexao.Fechar();
-
         }
 
-       
     }
 }
