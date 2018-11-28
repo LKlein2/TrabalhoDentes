@@ -70,7 +70,7 @@
             // 
             // buttonBuscarDentista
             // 
-            this.buttonBuscarDentista.Location = new System.Drawing.Point(307, 17);
+            this.buttonBuscarDentista.Location = new System.Drawing.Point(308, 18);
             this.buttonBuscarDentista.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.buttonBuscarDentista.Name = "buttonBuscarDentista";
             this.buttonBuscarDentista.Size = new System.Drawing.Size(52, 19);

@@ -13,8 +13,8 @@ namespace toothsProjectFinal
 {
     public partial class Agenda : Form
     {
-        private Usuario dentista;
-        private Usuario paciente;
+        private Dentista dentista;
+        private Paciente paciente;
 
         public Agenda()
         {
