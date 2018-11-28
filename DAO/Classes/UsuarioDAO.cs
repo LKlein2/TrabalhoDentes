@@ -171,7 +171,7 @@ namespace DAO
             using (SqlCommand comando = connection.Buscar().CreateCommand())
             {
                 comando.CommandType = CommandType.Text;
-                comando.CommandText = "Select id, login, senha, nome, documento, tipoacesso, datacadastro from usuario where id = @id";
+                comando.CommandText = "Select id, login, senha, nome, documento, tipoacesso, datacadastro, endereco, contato, dataNascimento from usuario where id = @id";
                 comando.Parameters.Add("@Id", SqlDbType.Int).Value = id;
 
                 using (SqlDataReader reader = comando.ExecuteReader())
@@ -187,6 +187,11 @@ namespace DAO
                         usuario.Documento = reader.GetString(4);
                         usuario.TipoAcesso = reader.GetInt32(5);
                         usuario.DataCadastro = reader.GetDateTime(6);
+                        usuario.Endereco = reader.GetString(7);
+                        usuario.Contato = reader.GetString(8);
+                        usuario.DataNascimento = reader.GetDateTime(9);
+                        
+
                     }
                 }
             }

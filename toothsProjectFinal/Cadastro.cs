@@ -19,11 +19,6 @@ namespace toothsProjectFinal
         public frmCadastro()
         {
             InitializeComponent();
-
-            if (Acesso.TipoUsuario() == 4)
-            {
-                buttonCadastrarAtualizar.Enabled = false;
-            }
         }
 
         private void buttonSair_Click(object sender, EventArgs e)

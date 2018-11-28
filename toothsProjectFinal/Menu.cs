@@ -38,8 +38,11 @@ namespace toothsProjectFinal
 
         private void buttonCadastrar_Click(object sender, EventArgs e)
         {
-            frmCadastro cadastroUsuario = new frmCadastro();
-            cadastroUsuario.Show();
+            if (Acesso.TipoUsuario() != 4)
+            { 
+                frmCadastro cadastroUsuario = new frmCadastro();
+                cadastroUsuario.Show();
+            }
         }
 
         private void buttonAlterarCadastro_Click(object sender, EventArgs e)
