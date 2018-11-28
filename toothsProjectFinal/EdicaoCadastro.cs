@@ -60,6 +60,7 @@ namespace toothsProjectFinal
             textBoxEndereco.Text = usuarioPesquisa.Endereco;
             textBoxTelefone.Text = usuarioPesquisa.Contato;
             dateTimePickerNascimento.Value = usuarioPesquisa.DataNascimento;
+
             if (usuarioPesquisa.TipoAcesso == 2)
             {
                 radioButtonOdontologista.Checked = true;
@@ -77,7 +78,40 @@ namespace toothsProjectFinal
 
         private void buttonAtualizar_Click(object sender, EventArgs e)
         {
+            IConnection conexao = new Connection();
+            conexao.Abrir();
 
+            UsuarioDao atualizaCadstro = new UsuarioDao(conexao);
+
+            int rbc = 0;
+            if (radioButtonOdontologista.Checked)
+            {
+                rbc = 2;
+            }
+            else if (radioButtonSecretaria.Checked)
+            {
+                rbc = 3;
+            }
+            else if (radioButtonPaciente.Checked)
+            {
+                rbc = 4;
+            }
+            else
+            {
+                labelMensagem.Text = "Selecione modo de acesso !";
+                labelMensagem.ForeColor = Color.Red;
+                return;
+            }
+
+            Usuario usuarioAtualiza = new Usuario(textBoxLogin.Text, textBoxSenha.Text, textBoxNome.Text, textBoxDocumento.Text, rbc,
+                                            DateTime.Now, Acesso.Administrativel(), textBoxEndereco.Text, textBoxTelefone.Text,
+                                            dateTimePickerNascimento.Value);
+
+            atualizaCadstro.Atualizar(usuarioAtualiza);
+            labelMensagem.Text = "Atualizado com sucesso !";
+            labelMensagem.ForeColor = Color.Green;
+            LimparTela();
+          
         }
 
         private void LimparTela ()
