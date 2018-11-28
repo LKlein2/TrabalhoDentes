@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Model.Excessões;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -21,7 +22,21 @@ namespace Model
             this.Usuario = usuario;
         }
 
-        public Usuario Usuario { get => usuario; set => usuario = value; }
+        public Usuario Usuario {
+            get => usuario;
+            set
+            {
+                if (value.TipoAcesso != 2)
+                {
+                    throw new TipoInvalidoException("Usuario cadastrado não é um dentista");
+                }
+                else
+                {
+                    this.usuario = value;
+                    this.Id = value.ID;
+                }
+            }
+        }
         public int Id1 { get => Id; set => Id = value; }
 
         public string Autenticacao()

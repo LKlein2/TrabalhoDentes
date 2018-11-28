@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Model.Excessões;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -9,13 +10,30 @@ namespace Model
     public class Secretaria : Usuario, IAdministrativel, IAutenticavel
     {
         private Usuario usuario;
+        private int id;
 
         public Secretaria(Usuario usuario)
         {
             this.Usuario = usuario;
         }
 
-        public Usuario Usuario { get => usuario; set => usuario = value; }
+        public Usuario Usuario {
+            get => usuario;
+            set
+            {
+                if (value.TipoAcesso != 3)
+                {
+                    throw new TipoInvalidoException("Usuario cadastrado não é uma secretaria");
+                }
+                else
+                {
+                    this.usuario = value;
+                    this.Id = value.ID;
+                }
+            }
+        }
+
+        public int Id { get => id; set => id = value; }
 
         public string Autenticacao()
         {

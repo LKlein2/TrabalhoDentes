@@ -15,8 +15,8 @@ namespace DAO.Classes
 
         public Connection()
         {
-            //connection = new SqlConnection("Data Source=DESKTOP-H7OTOKV; Initial Catalog=toothsdb; Integrated Security=True");
-            connection = new SqlConnection("Data Source=DESKTOP-1S76M2V; Initial Catalog=tooths; Integrated Security=True");
+            connection = new SqlConnection("Data Source=DESKTOP-H7OTOKV; Initial Catalog=toothsdb; Integrated Security=True");
+            //connection = new SqlConnection("Data Source=DESKTOP-1S76M2V; Initial Catalog=tooths; Integrated Security=True");
         }
 
         public SqlConnection Abrir()

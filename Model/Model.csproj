@@ -48,6 +48,7 @@
     <Compile Include="Classes\Paciente.cs" />
     <Compile Include="Classes\Dentista.cs" />
     <Compile Include="Classes\Radiograma.cs" />
+    <Compile Include="Excessões\TipoInvalidoException.cs" />
     <Compile Include="Interfaces\IAdministrativel.cs" />
     <Compile Include="Interfaces\IAutenticavel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
