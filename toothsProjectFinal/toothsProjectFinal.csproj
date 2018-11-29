@@ -90,6 +90,9 @@
     <EmbeddedResource Include="Cadastro.resx">
       <DependentUpon>Cadastro.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Consulta.resx">
+      <DependentUpon>Consulta.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="EdicaoCadastro.resx">
       <DependentUpon>EdicaoCadastro.cs</DependentUpon>
     </EmbeddedResource>

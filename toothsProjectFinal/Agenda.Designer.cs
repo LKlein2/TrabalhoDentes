@@ -59,21 +59,21 @@
             this.groupDentista.Controls.Add(this.buttonBuscarDentista);
             this.groupDentista.Controls.Add(this.txtNomeDentista);
             this.groupDentista.Controls.Add(this.txtIdDentista);
-            this.groupDentista.Location = new System.Drawing.Point(15, 18);
-            this.groupDentista.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.groupDentista.Location = new System.Drawing.Point(11, 15);
+            this.groupDentista.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.groupDentista.Name = "groupDentista";
-            this.groupDentista.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.groupDentista.Size = new System.Drawing.Size(488, 58);
+            this.groupDentista.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupDentista.Size = new System.Drawing.Size(366, 47);
             this.groupDentista.TabIndex = 1;
             this.groupDentista.TabStop = false;
             this.groupDentista.Text = "Dentista";
             // 
             // buttonBuscarDentista
             // 
-            this.buttonBuscarDentista.Location = new System.Drawing.Point(411, 22);
-            this.buttonBuscarDentista.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.buttonBuscarDentista.Location = new System.Drawing.Point(308, 18);
+            this.buttonBuscarDentista.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.buttonBuscarDentista.Name = "buttonBuscarDentista";
-            this.buttonBuscarDentista.Size = new System.Drawing.Size(69, 23);
+            this.buttonBuscarDentista.Size = new System.Drawing.Size(52, 19);
             this.buttonBuscarDentista.TabIndex = 2;
             this.buttonBuscarDentista.Text = "Buscar";
             this.buttonBuscarDentista.UseVisualStyleBackColor = true;
@@ -81,18 +81,18 @@
             // 
             // txtNomeDentista
             // 
-            this.txtNomeDentista.Location = new System.Drawing.Point(125, 21);
-            this.txtNomeDentista.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txtNomeDentista.Location = new System.Drawing.Point(94, 17);
+            this.txtNomeDentista.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.txtNomeDentista.Name = "txtNomeDentista";
-            this.txtNomeDentista.Size = new System.Drawing.Size(279, 22);
+            this.txtNomeDentista.Size = new System.Drawing.Size(210, 20);
             this.txtNomeDentista.TabIndex = 1;
             // 
             // txtIdDentista
             // 
-            this.txtIdDentista.Location = new System.Drawing.Point(19, 21);
-            this.txtIdDentista.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txtIdDentista.Location = new System.Drawing.Point(14, 17);
+            this.txtIdDentista.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.txtIdDentista.Name = "txtIdDentista";
-            this.txtIdDentista.Size = new System.Drawing.Size(100, 22);
+            this.txtIdDentista.Size = new System.Drawing.Size(76, 20);
             this.txtIdDentista.TabIndex = 0;
             // 
             // groupPaciente
@@ -100,21 +100,21 @@
             this.groupPaciente.Controls.Add(this.buttonBuscarPaciente);
             this.groupPaciente.Controls.Add(this.txtNomePaciente);
             this.groupPaciente.Controls.Add(this.txtIdPaciente);
-            this.groupPaciente.Location = new System.Drawing.Point(508, 18);
-            this.groupPaciente.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.groupPaciente.Location = new System.Drawing.Point(381, 15);
+            this.groupPaciente.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.groupPaciente.Name = "groupPaciente";
-            this.groupPaciente.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.groupPaciente.Size = new System.Drawing.Size(488, 58);
+            this.groupPaciente.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupPaciente.Size = new System.Drawing.Size(366, 47);
             this.groupPaciente.TabIndex = 2;
             this.groupPaciente.TabStop = false;
             this.groupPaciente.Text = "Paciente";
             // 
             // buttonBuscarPaciente
             // 
-            this.buttonBuscarPaciente.Location = new System.Drawing.Point(409, 21);
-            this.buttonBuscarPaciente.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.buttonBuscarPaciente.Location = new System.Drawing.Point(307, 17);
+            this.buttonBuscarPaciente.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.buttonBuscarPaciente.Name = "buttonBuscarPaciente";
-            this.buttonBuscarPaciente.Size = new System.Drawing.Size(69, 23);
+            this.buttonBuscarPaciente.Size = new System.Drawing.Size(52, 19);
             this.buttonBuscarPaciente.TabIndex = 2;
             this.buttonBuscarPaciente.Text = "Buscar";
             this.buttonBuscarPaciente.UseVisualStyleBackColor = true;
@@ -122,26 +122,26 @@
             // 
             // txtNomePaciente
             // 
-            this.txtNomePaciente.Location = new System.Drawing.Point(125, 21);
-            this.txtNomePaciente.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txtNomePaciente.Location = new System.Drawing.Point(94, 17);
+            this.txtNomePaciente.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.txtNomePaciente.Name = "txtNomePaciente";
-            this.txtNomePaciente.Size = new System.Drawing.Size(279, 22);
+            this.txtNomePaciente.Size = new System.Drawing.Size(210, 20);
             this.txtNomePaciente.TabIndex = 1;
             // 
             // txtIdPaciente
             // 
-            this.txtIdPaciente.Location = new System.Drawing.Point(19, 21);
-            this.txtIdPaciente.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txtIdPaciente.Location = new System.Drawing.Point(14, 17);
+            this.txtIdPaciente.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.txtIdPaciente.Name = "txtIdPaciente";
-            this.txtIdPaciente.Size = new System.Drawing.Size(100, 22);
+            this.txtIdPaciente.Size = new System.Drawing.Size(76, 20);
             this.txtIdPaciente.TabIndex = 0;
             // 
             // buttonCarregarAgenda
             // 
-            this.buttonCarregarAgenda.Location = new System.Drawing.Point(821, 81);
-            this.buttonCarregarAgenda.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.buttonCarregarAgenda.Location = new System.Drawing.Point(616, 66);
+            this.buttonCarregarAgenda.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.buttonCarregarAgenda.Name = "buttonCarregarAgenda";
-            this.buttonCarregarAgenda.Size = new System.Drawing.Size(175, 58);
+            this.buttonCarregarAgenda.Size = new System.Drawing.Size(131, 47);
             this.buttonCarregarAgenda.TabIndex = 3;
             this.buttonCarregarAgenda.Text = "CARREGAR AGENDA";
             this.buttonCarregarAgenda.UseVisualStyleBackColor = true;
@@ -156,10 +156,9 @@
             this.columnInicio,
             this.columnFim,
             this.columnObs});
-            this.listViewAgenda.Location = new System.Drawing.Point(15, 145);
-            this.listViewAgenda.Margin = new System.Windows.Forms.Padding(4);
+            this.listViewAgenda.Location = new System.Drawing.Point(11, 118);
             this.listViewAgenda.Name = "listViewAgenda";
-            this.listViewAgenda.Size = new System.Drawing.Size(980, 194);
+            this.listViewAgenda.Size = new System.Drawing.Size(736, 158);
             this.listViewAgenda.TabIndex = 4;
             this.listViewAgenda.UseCompatibleStateImageBehavior = false;
             this.listViewAgenda.View = System.Windows.Forms.View.Details;
@@ -203,11 +202,11 @@
             this.groupData.Controls.Add(this.lblInicial);
             this.groupData.Controls.Add(this.dateFinal);
             this.groupData.Controls.Add(this.dateInicial);
-            this.groupData.Location = new System.Drawing.Point(15, 81);
-            this.groupData.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.groupData.Location = new System.Drawing.Point(11, 66);
+            this.groupData.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.groupData.Name = "groupData";
-            this.groupData.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.groupData.Size = new System.Drawing.Size(382, 58);
+            this.groupData.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupData.Size = new System.Drawing.Size(286, 47);
             this.groupData.TabIndex = 5;
             this.groupData.TabStop = false;
             this.groupData.Text = "Intervalo de data";
@@ -215,51 +214,56 @@
             // lblFinal
             // 
             this.lblFinal.AutoSize = true;
-            this.lblFinal.Location = new System.Drawing.Point(203, 30);
+            this.lblFinal.Location = new System.Drawing.Point(152, 24);
+            this.lblFinal.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblFinal.Name = "lblFinal";
-            this.lblFinal.Size = new System.Drawing.Size(46, 17);
+            this.lblFinal.Size = new System.Drawing.Size(35, 13);
             this.lblFinal.TabIndex = 8;
             this.lblFinal.Text = "Final: ";
             // 
             // lblInicial
             // 
             this.lblInicial.AutoSize = true;
-            this.lblInicial.Location = new System.Drawing.Point(16, 30);
+            this.lblInicial.Location = new System.Drawing.Point(12, 24);
+            this.lblInicial.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblInicial.Name = "lblInicial";
-            this.lblInicial.Size = new System.Drawing.Size(51, 17);
+            this.lblInicial.Size = new System.Drawing.Size(40, 13);
             this.lblInicial.TabIndex = 7;
             this.lblInicial.Text = "Inicial: ";
             // 
             // dateFinal
             // 
             this.dateFinal.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dateFinal.Location = new System.Drawing.Point(255, 25);
+            this.dateFinal.Location = new System.Drawing.Point(191, 20);
+            this.dateFinal.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.dateFinal.MinDate = new System.DateTime(2018, 1, 1, 0, 0, 0, 0);
             this.dateFinal.Name = "dateFinal";
-            this.dateFinal.Size = new System.Drawing.Size(114, 22);
+            this.dateFinal.Size = new System.Drawing.Size(86, 20);
             this.dateFinal.TabIndex = 6;
             // 
             // dateInicial
             // 
             this.dateInicial.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dateInicial.Location = new System.Drawing.Point(73, 25);
+            this.dateInicial.Location = new System.Drawing.Point(55, 20);
+            this.dateInicial.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.dateInicial.MinDate = new System.DateTime(2018, 1, 1, 0, 0, 0, 0);
             this.dateInicial.Name = "dateInicial";
-            this.dateInicial.Size = new System.Drawing.Size(114, 22);
+            this.dateInicial.Size = new System.Drawing.Size(86, 20);
             this.dateInicial.TabIndex = 0;
             // 
             // Agenda
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1005, 351);
+            this.ClientSize = new System.Drawing.Size(754, 285);
             this.Controls.Add(this.groupData);
             this.Controls.Add(this.listViewAgenda);
             this.Controls.Add(this.buttonCarregarAgenda);
             this.Controls.Add(this.groupPaciente);
             this.Controls.Add(this.groupDentista);
-            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "Agenda";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Agenda";
             this.groupDentista.ResumeLayout(false);
             this.groupDentista.PerformLayout();
