@@ -1,4 +1,5 @@
-﻿using DAO;
+﻿using Classes.DAO;
+using DAO;
 using DAO.Classes;
 using DAO.Interfaces;
 using Model;
@@ -15,12 +16,13 @@ using System.Windows.Forms;
 
 namespace toothsProjectFinal
 {
-    public partial class Agenda : Form
+    public partial class AgendaView : Form
     {
         private Dentista dentista;
         private Paciente paciente;
+        private List<Agenda> agenda;
 
-        public Agenda()
+        public AgendaView()
         {
             InitializeComponent();
             PrepararTela();
@@ -48,6 +50,15 @@ namespace toothsProjectFinal
 
             UsuarioDao usuarioDao = new UsuarioDao(conexao);
             return usuarioDao;
+        }
+
+        private AgendaDao RetornaAgendaDao()
+        {
+            IConnection conexao = new Connection();
+            conexao.Abrir();
+
+            AgendaDao agendaDao = new AgendaDao(conexao);
+            return agendaDao;
         }
 
         private void CarregaDentista(int id)
@@ -135,7 +146,71 @@ namespace toothsProjectFinal
 
         private void buttonCarregarAgenda_Click(object sender, EventArgs e)
         {
+            ValidaDentistaPaciente();
+            DateTime dataInicial, dataFinal;
+            dataInicial = DateTime.Parse(dateInicial.Text);
+            dataFinal = DateTime.Parse(dateFinal.Text);
 
+            if (dataInicial <= dataFinal)
+            {
+                CarregaList(dataInicial, dataFinal);
+            }
+            else
+            {
+                MessageBox.Show("Datas inválidas, verifique!");
+                dateInicial.Focus();
+            }
+        }
+
+        private void ValidaDentistaPaciente()
+        {
+            if (txtIdDentista.Text.Length == 0)
+            {
+                dentista = null;
+                telaDentista(true);
+            }
+            if (txtIdPaciente.Text.Length == 0)
+            {
+                dentista = null;
+                telaDentista(true);
+            }
+        }
+
+        private void CarregaList(DateTime dataInicial, DateTime dataFinal)
+        {
+            AgendaDao agendaDao = RetornaAgendaDao();
+            agenda = null;
+
+            agenda = agendaDao.BuscaListaAgendas(dataInicial, dataFinal, paciente, dentista);
+
+            listViewAgenda.Items.Clear();
+            foreach (var a in agenda)
+            {
+                if (dentista != null && a.Dentista.Id1 == dentista.Id1)
+                {
+                    a.Dentista = dentista;
+                } else
+                {
+                    //Fazer aqui
+                }
+
+                if (paciente != null && a.Paciente.Id == paciente.Id)
+                {
+                    a.Paciente = paciente;
+                } else
+                {
+                    // fazer aqui tb
+                }
+
+                ListViewItem li = new ListViewItem(
+                new string[] { (a.DataConsulta.ToShortDateString()),
+                               (a.Dentista.Id1.ToString() + " - " + a.Dentista.Usuario.Nome),
+                               (a.Paciente.Id.ToString() + " - " + a.Paciente.Usuario.Nome),
+                               (a.Inicio), (a.Fim), a.Observacao_1}
+                );
+                listViewAgenda.Items.Add(li);
+
+            }
         }
     }
 }

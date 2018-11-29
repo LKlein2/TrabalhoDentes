@@ -1,6 +1,6 @@
 ﻿namespace toothsProjectFinal
 {
-    partial class Agenda
+    partial class AgendaView
     {
         /// <summary>
         /// Required designer variable.
@@ -166,34 +166,29 @@
             // 
             // columnData
             // 
-            this.columnData.DisplayIndex = 5;
             this.columnData.Text = "Data";
+            this.columnData.Width = 86;
             // 
             // columnDentista
             // 
-            this.columnDentista.DisplayIndex = 0;
             this.columnDentista.Text = "Dentista";
             this.columnDentista.Width = 123;
             // 
             // columnPaciente
             // 
-            this.columnPaciente.DisplayIndex = 1;
             this.columnPaciente.Text = "Paciente";
             this.columnPaciente.Width = 121;
             // 
             // columnInicio
             // 
-            this.columnInicio.DisplayIndex = 2;
             this.columnInicio.Text = "Inicio";
             // 
             // columnFim
             // 
-            this.columnFim.DisplayIndex = 3;
             this.columnFim.Text = "Fim";
             // 
             // columnObs
             // 
-            this.columnObs.DisplayIndex = 4;
             this.columnObs.Text = "Observações";
             this.columnObs.Width = 233;
             // 
@@ -248,7 +243,7 @@
             this.dateInicial.Size = new System.Drawing.Size(114, 22);
             this.dateInicial.TabIndex = 0;
             // 
-            // Agenda
+            // AgendaView
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -259,7 +254,7 @@
             this.Controls.Add(this.groupPaciente);
             this.Controls.Add(this.groupDentista);
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.Name = "Agenda";
+            this.Name = "AgendaView";
             this.Text = "Agenda";
             this.groupDentista.ResumeLayout(false);
             this.groupDentista.PerformLayout();
