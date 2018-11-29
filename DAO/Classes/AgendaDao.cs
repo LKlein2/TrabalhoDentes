@@ -21,22 +21,100 @@ namespace Classes.DAO
 
         public void Atualizar(Agenda model)
         {
-            throw new NotImplementedException();
+            using (SqlCommand comando = connection.Buscar().CreateCommand())
+            {
+                string sql;
+                sql = MontaSqlUpdate(model);
+                comando.CommandType = CommandType.Text;
+                comando.CommandText = (sql);
+
+                comando.Parameters.Add("@dataConsulta", SqlDbType.DateTime).Value = model.DataConsulta;
+                comando.Parameters.Add("@id_dentista", SqlDbType.Int).Value = model.Dentista;
+                comando.Parameters.Add("@id_paciente", SqlDbType.Int).Value = model.Paciente;
+                comando.Parameters.Add("@inicio", SqlDbType.Text).Value = model.Inicio;
+                comando.Parameters.Add("@fim", SqlDbType.Text).Value = model.Fim;
+                comando.Parameters.Add("@id", SqlDbType.Int).Value = model.Id;
+                if (model.Observacao_1 != null) comando.Parameters.Add("@observacao_1", SqlDbType.Text).Value = model.Observacao_1;
+               
+
+                comando.ExecuteNonQuery();
+            } 
+        }
+
+        private string MontaSqlUpdate(Agenda agenda)
+        {
+            string sql;
+            sql = "update agenda set ";
+            sql += " dataConsulta=@dataConsulta ";
+            sql += ", id_dentista=@id_dentista ";
+            sql += ", id_paciente=@id_paciente ";
+            sql += ", inicio=@inicio ";
+            sql += ", fim=@fim ";
+            if (agenda.Observacao_1 != null)
+                sql += ", observacao_1=@observacao_1 ";
+            sql += "where id = @id ;";
+
+            return sql;
         }
 
         public void Dispose()
         {
-            throw new NotImplementedException();
+            GC.SuppressFinalize(this);
         }
 
         public Agenda Inserir(Agenda model)
         {
-            throw new NotImplementedException();
+            using (SqlCommand comando = connection.Buscar().CreateCommand())
+            {
+                string sql = MontaSqlInsert(model);
+                comando.CommandType = CommandType.Text;
+                comando.CommandText = sql;
+
+                comando.Parameters.Add("@dataConsulta", SqlDbType.DateTime).Value = model.DataConsulta;
+                comando.Parameters.Add("@id_dentista", SqlDbType.Int).Value = model.Dentista;
+                comando.Parameters.Add("@id_paciente", SqlDbType.Int).Value = model.Paciente;
+                comando.Parameters.Add("@inicio", SqlDbType.Text).Value = model.Inicio;
+                comando.Parameters.Add("@fim", SqlDbType.Text).Value = model.Fim;
+                if (model.Observacao_1 != null)
+                    comando.Parameters.Add("@observacao_1", SqlDbType.Text).Value = model.Observacao_1;
+
+                comando.ExecuteScalar();
+
+            }
+            return model;
         }
 
+        private string MontaSqlInsert(Agenda model)
+        {
+            string sql;
+            sql = "insert into agenda(dataCosulta, id_dentista, id_paciente, inicio, fim ";
+            if (model.Observacao_1 != null)
+                sql += ", observacao_1 ";
+            sql += ") values (";
+            sql += "@dataCosulta, @id_dentista, @id_paciente, @inicio, @fim ";
+            if (model.Observacao_1 != null)
+                sql += ", @observacao_1 ";
+            sql += ");";
+
+            return sql;
+        }
+        
         public bool Remover(Agenda model)
         {
-            throw new NotImplementedException();
+            Boolean retornar = false;
+            using (SqlCommand comando = connection.Buscar().CreateCommand())
+            {
+                comando.CommandType = CommandType.Text;
+                comando.CommandText = "delete from agenda where id=@id";
+
+                comando.Parameters.Add("@id", SqlDbType.Int).Value = model.Id;
+
+                if (comando.ExecuteNonQuery() > 0)
+                {
+                    retornar = true;
+                }
+            }
+            return retornar;
         }
 
         public List<Agenda> BuscaListaAgendas(DateTime dataInicial, DateTime dataFinal, Paciente paciente = null, Dentista dentista = null)
