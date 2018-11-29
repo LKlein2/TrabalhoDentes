@@ -2,7 +2,7 @@
 
 namespace toothsProjectFinal
 {
-    partial class Menu
+    partial class MenuView
     {
         /// <summary>
         /// Required designer variable.
@@ -66,6 +66,7 @@ namespace toothsProjectFinal
             this.consultasToolStripMenuItem.Name = "consultasToolStripMenuItem";
             this.consultasToolStripMenuItem.Size = new System.Drawing.Size(113, 19);
             this.consultasToolStripMenuItem.Text = "Consultas";
+            this.consultasToolStripMenuItem.Click += new System.EventHandler(this.buttonConsultas_Click);
             // 
             // pacienteToolStripMenuItem
             // 
@@ -79,14 +80,14 @@ namespace toothsProjectFinal
             // cadastrarToolStripMenuItem
             // 
             this.cadastrarToolStripMenuItem.Name = "cadastrarToolStripMenuItem";
-            this.cadastrarToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.cadastrarToolStripMenuItem.Size = new System.Drawing.Size(165, 22);
             this.cadastrarToolStripMenuItem.Text = "Cadastrar";
             this.cadastrarToolStripMenuItem.Click += new System.EventHandler(this.buttonCadastrar_Click);
             // 
             // alterarConsultarToolStripMenuItem
             // 
             this.alterarConsultarToolStripMenuItem.Name = "alterarConsultarToolStripMenuItem";
-            this.alterarConsultarToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.alterarConsultarToolStripMenuItem.Size = new System.Drawing.Size(165, 22);
             this.alterarConsultarToolStripMenuItem.Text = "Alterar/Consultar";
             this.alterarConsultarToolStripMenuItem.Click += new System.EventHandler(this.buttonAlterarCadastro_Click);
             // 

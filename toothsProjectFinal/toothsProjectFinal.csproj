@@ -52,23 +52,23 @@
     <Compile Include="AgendaView.Designer.cs">
       <DependentUpon>AgendaView.cs</DependentUpon>
     </Compile>
-    <Compile Include="Cadastro.cs">
+    <Compile Include="CadastroView.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Cadastro.Designer.cs">
-      <DependentUpon>Cadastro.cs</DependentUpon>
+    <Compile Include="CadastroView.Designer.cs">
+      <DependentUpon>CadastroView.cs</DependentUpon>
     </Compile>
-    <Compile Include="Consulta.cs">
+    <Compile Include="ConsultaView.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Consulta.Designer.cs">
-      <DependentUpon>Consulta.cs</DependentUpon>
+    <Compile Include="ConsultaView.Designer.cs">
+      <DependentUpon>ConsultaView.cs</DependentUpon>
     </Compile>
-    <Compile Include="EdicaoCadastro.cs">
+    <Compile Include="EdicaoCadastroView.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="EdicaoCadastro.Designer.cs">
-      <DependentUpon>EdicaoCadastro.cs</DependentUpon>
+    <Compile Include="EdicaoCadastroView.Designer.cs">
+      <DependentUpon>EdicaoCadastroView.cs</DependentUpon>
     </Compile>
     <Compile Include="Login.cs">
       <SubType>Form</SubType>
@@ -76,31 +76,31 @@
     <Compile Include="Login.Designer.cs">
       <DependentUpon>Login.cs</DependentUpon>
     </Compile>
-    <Compile Include="Menu.cs">
+    <Compile Include="MenuView.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Menu.Designer.cs">
-      <DependentUpon>Menu.cs</DependentUpon>
+    <Compile Include="MenuView.Designer.cs">
+      <DependentUpon>MenuView.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="AgendaView.resx">
       <DependentUpon>AgendaView.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Cadastro.resx">
-      <DependentUpon>Cadastro.cs</DependentUpon>
+    <EmbeddedResource Include="CadastroView.resx">
+      <DependentUpon>CadastroView.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Consulta.resx">
-      <DependentUpon>Consulta.cs</DependentUpon>
+    <EmbeddedResource Include="ConsultaView.resx">
+      <DependentUpon>ConsultaView.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="EdicaoCadastro.resx">
-      <DependentUpon>EdicaoCadastro.cs</DependentUpon>
+    <EmbeddedResource Include="EdicaoCadastroView.resx">
+      <DependentUpon>EdicaoCadastroView.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Login.resx">
       <DependentUpon>Login.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Menu.resx">
-      <DependentUpon>Menu.cs</DependentUpon>
+    <EmbeddedResource Include="MenuView.resx">
+      <DependentUpon>MenuView.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

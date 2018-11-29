@@ -130,5 +130,7 @@ namespace toothsProjectFinal
             radioButtonPaciente.Checked = false;
             radioButtonSecretaria.Checked = false;
         }
+
+       
     }
 }

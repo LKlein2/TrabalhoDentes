@@ -50,7 +50,7 @@ namespace toothsProjectFinal
             {
                 a = new Paciente(usuario);
             }
-            Menu menu = new Menu(a);
+            MenuView menu = new MenuView(a);
             menu.Show();
             this.Hide();
         }

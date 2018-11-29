@@ -10,11 +10,15 @@ using System.Windows.Forms;
 
 namespace toothsProjectFinal
 {
-    public partial class Consulta : Form
+    public partial class ConsultaView : Form
     {
-        public Consulta()
+        public ConsultaView()
         {
             InitializeComponent();
         }
+
+       
+
+        
     }
 }

@@ -14,9 +14,9 @@ using System.Windows.Forms;
 
 namespace toothsProjectFinal
 {
-    public partial class Menu : Form
+    public partial class MenuView : Form
     {
-        public Menu(IAutenticavel autenticavel)
+        public MenuView(IAutenticavel autenticavel)
         {
             if (autenticavel != null)
             {
@@ -49,6 +49,12 @@ namespace toothsProjectFinal
         {
             frmEdicaoCadastro editarCadastro = new frmEdicaoCadastro();
             editarCadastro.Show();
+        }
+
+        private void buttonConsultas_Click(object sender, EventArgs e)
+        {
+            ConsultaView lancarConsulta = new ConsultaView();
+            lancarConsulta.Show();
         }
     }
 

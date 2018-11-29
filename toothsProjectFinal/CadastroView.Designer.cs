@@ -1,6 +1,6 @@
 ﻿namespace toothsProjectFinal
 {
-    partial class frmEdicaoCadastro
+    partial class frmCadastro
     {
         /// <summary>
         /// Required designer variable.
@@ -28,8 +28,11 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.groupBoxInfo = new System.Windows.Forms.GroupBox();
-            this.labelMensagem = new System.Windows.Forms.Label();
+            this.groupBoxLogin = new System.Windows.Forms.GroupBox();
+            this.textBoxSenha = new System.Windows.Forms.TextBox();
+            this.textBoxLogin = new System.Windows.Forms.TextBox();
+            this.labelSenha = new System.Windows.Forms.Label();
+            this.labelLogin = new System.Windows.Forms.Label();
             this.groupBoxComplemento = new System.Windows.Forms.GroupBox();
             this.groupBoxAcesso = new System.Windows.Forms.GroupBox();
             this.radioButtonSecretaria = new System.Windows.Forms.RadioButton();
@@ -47,41 +50,63 @@
             this.labelDocumento = new System.Windows.Forms.Label();
             this.textBoxNome = new System.Windows.Forms.TextBox();
             this.labelNome = new System.Windows.Forms.Label();
-            this.groupBoxLogin = new System.Windows.Forms.GroupBox();
-            this.textBoxSenha = new System.Windows.Forms.TextBox();
-            this.textBoxLogin = new System.Windows.Forms.TextBox();
-            this.labelSenha = new System.Windows.Forms.Label();
-            this.labelLogin = new System.Windows.Forms.Label();
-            this.buttonAtualizar = new System.Windows.Forms.Button();
             this.buttonSair = new System.Windows.Forms.Button();
-            this.buttonPesquisar = new System.Windows.Forms.Button();
-            this.groupBoxInfo.SuspendLayout();
+            this.buttonCadastrarAtualizar = new System.Windows.Forms.Button();
+            this.labelMensagem = new System.Windows.Forms.Label();
+            this.groupBoxInfo = new System.Windows.Forms.GroupBox();
+            this.groupBoxLogin.SuspendLayout();
             this.groupBoxComplemento.SuspendLayout();
             this.groupBoxAcesso.SuspendLayout();
-            this.groupBoxLogin.SuspendLayout();
+            this.groupBoxInfo.SuspendLayout();
             this.SuspendLayout();
             // 
-            // groupBoxInfo
+            // groupBoxLogin
             // 
-            this.groupBoxInfo.Controls.Add(this.labelMensagem);
-            this.groupBoxInfo.Location = new System.Drawing.Point(269, 23);
-            this.groupBoxInfo.Name = "groupBoxInfo";
-            this.groupBoxInfo.Size = new System.Drawing.Size(177, 100);
-            this.groupBoxInfo.TabIndex = 7;
-            this.groupBoxInfo.TabStop = false;
-            this.groupBoxInfo.Text = "Mensagem Sistema";
+            this.groupBoxLogin.Controls.Add(this.textBoxSenha);
+            this.groupBoxLogin.Controls.Add(this.textBoxLogin);
+            this.groupBoxLogin.Controls.Add(this.labelSenha);
+            this.groupBoxLogin.Controls.Add(this.labelLogin);
+            this.groupBoxLogin.Location = new System.Drawing.Point(22, 23);
+            this.groupBoxLogin.Name = "groupBoxLogin";
+            this.groupBoxLogin.Size = new System.Drawing.Size(241, 100);
+            this.groupBoxLogin.TabIndex = 0;
+            this.groupBoxLogin.TabStop = false;
+            this.groupBoxLogin.Text = "Dados Login";
             // 
-            // labelMensagem
+            // textBoxSenha
             // 
-            this.labelMensagem.Location = new System.Drawing.Point(6, 46);
-            this.labelMensagem.Name = "labelMensagem";
-            this.labelMensagem.Size = new System.Drawing.Size(165, 13);
-            this.labelMensagem.TabIndex = 4;
-            this.labelMensagem.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.textBoxSenha.Location = new System.Drawing.Point(116, 60);
+            this.textBoxSenha.Name = "textBoxSenha";
+            this.textBoxSenha.Size = new System.Drawing.Size(114, 20);
+            this.textBoxSenha.TabIndex = 3;
+            // 
+            // textBoxLogin
+            // 
+            this.textBoxLogin.Location = new System.Drawing.Point(116, 23);
+            this.textBoxLogin.Name = "textBoxLogin";
+            this.textBoxLogin.Size = new System.Drawing.Size(114, 20);
+            this.textBoxLogin.TabIndex = 2;
+            // 
+            // labelSenha
+            // 
+            this.labelSenha.AutoSize = true;
+            this.labelSenha.Location = new System.Drawing.Point(11, 67);
+            this.labelSenha.Name = "labelSenha";
+            this.labelSenha.Size = new System.Drawing.Size(38, 13);
+            this.labelSenha.TabIndex = 1;
+            this.labelSenha.Text = "Senha";
+            // 
+            // labelLogin
+            // 
+            this.labelLogin.AutoSize = true;
+            this.labelLogin.Location = new System.Drawing.Point(11, 26);
+            this.labelLogin.Name = "labelLogin";
+            this.labelLogin.Size = new System.Drawing.Size(33, 13);
+            this.labelLogin.TabIndex = 0;
+            this.labelLogin.Text = "Login";
             // 
             // groupBoxComplemento
             // 
-            this.groupBoxComplemento.Controls.Add(this.buttonPesquisar);
             this.groupBoxComplemento.Controls.Add(this.groupBoxAcesso);
             this.groupBoxComplemento.Controls.Add(this.textBoxCodigo);
             this.groupBoxComplemento.Controls.Add(this.labelCodigo);
@@ -98,7 +123,7 @@
             this.groupBoxComplemento.Location = new System.Drawing.Point(22, 142);
             this.groupBoxComplemento.Name = "groupBoxComplemento";
             this.groupBoxComplemento.Size = new System.Drawing.Size(424, 264);
-            this.groupBoxComplemento.TabIndex = 6;
+            this.groupBoxComplemento.TabIndex = 1;
             this.groupBoxComplemento.TabStop = false;
             this.groupBoxComplemento.Text = "Dados Complementares";
             // 
@@ -149,6 +174,7 @@
             // 
             // textBoxCodigo
             // 
+            this.textBoxCodigo.Enabled = false;
             this.textBoxCodigo.Location = new System.Drawing.Point(116, 19);
             this.textBoxCodigo.Name = "textBoxCodigo";
             this.textBoxCodigo.Size = new System.Drawing.Size(114, 20);
@@ -170,7 +196,7 @@
             this.dateTimePickerNascimento.MaxDate = new System.DateTime(2100, 12, 31, 0, 0, 0, 0);
             this.dateTimePickerNascimento.MinDate = new System.DateTime(1950, 1, 1, 0, 0, 0, 0);
             this.dateTimePickerNascimento.Name = "dateTimePickerNascimento";
-            this.dateTimePickerNascimento.Size = new System.Drawing.Size(114, 20);
+            this.dateTimePickerNascimento.Size = new System.Drawing.Size(90, 20);
             this.dateTimePickerNascimento.TabIndex = 17;
             this.dateTimePickerNascimento.TabStop = false;
             // 
@@ -247,136 +273,96 @@
             this.labelNome.TabIndex = 4;
             this.labelNome.Text = "Nome";
             // 
-            // groupBoxLogin
-            // 
-            this.groupBoxLogin.Controls.Add(this.textBoxSenha);
-            this.groupBoxLogin.Controls.Add(this.textBoxLogin);
-            this.groupBoxLogin.Controls.Add(this.labelSenha);
-            this.groupBoxLogin.Controls.Add(this.labelLogin);
-            this.groupBoxLogin.Location = new System.Drawing.Point(22, 23);
-            this.groupBoxLogin.Name = "groupBoxLogin";
-            this.groupBoxLogin.Size = new System.Drawing.Size(241, 100);
-            this.groupBoxLogin.TabIndex = 5;
-            this.groupBoxLogin.TabStop = false;
-            this.groupBoxLogin.Text = "Dados Login";
-            // 
-            // textBoxSenha
-            // 
-            this.textBoxSenha.Enabled = false;
-            this.textBoxSenha.Location = new System.Drawing.Point(116, 60);
-            this.textBoxSenha.Name = "textBoxSenha";
-            this.textBoxSenha.Size = new System.Drawing.Size(114, 20);
-            this.textBoxSenha.TabIndex = 3;
-            // 
-            // textBoxLogin
-            // 
-            this.textBoxLogin.Enabled = false;
-            this.textBoxLogin.Location = new System.Drawing.Point(116, 23);
-            this.textBoxLogin.Name = "textBoxLogin";
-            this.textBoxLogin.Size = new System.Drawing.Size(114, 20);
-            this.textBoxLogin.TabIndex = 2;
-            // 
-            // labelSenha
-            // 
-            this.labelSenha.AutoSize = true;
-            this.labelSenha.Location = new System.Drawing.Point(11, 67);
-            this.labelSenha.Name = "labelSenha";
-            this.labelSenha.Size = new System.Drawing.Size(38, 13);
-            this.labelSenha.TabIndex = 1;
-            this.labelSenha.Text = "Senha";
-            // 
-            // labelLogin
-            // 
-            this.labelLogin.AutoSize = true;
-            this.labelLogin.Location = new System.Drawing.Point(11, 26);
-            this.labelLogin.Name = "labelLogin";
-            this.labelLogin.Size = new System.Drawing.Size(33, 13);
-            this.labelLogin.TabIndex = 0;
-            this.labelLogin.Text = "Login";
-            // 
-            // buttonAtualizar
-            // 
-            this.buttonAtualizar.Location = new System.Drawing.Point(102, 412);
-            this.buttonAtualizar.Name = "buttonAtualizar";
-            this.buttonAtualizar.Size = new System.Drawing.Size(120, 23);
-            this.buttonAtualizar.TabIndex = 9;
-            this.buttonAtualizar.Text = "Atualizar Cadastro";
-            this.buttonAtualizar.UseVisualStyleBackColor = true;
-            this.buttonAtualizar.Click += new System.EventHandler(this.buttonAtualizar_Click);
-            // 
             // buttonSair
             // 
-            this.buttonSair.Location = new System.Drawing.Point(246, 412);
+            this.buttonSair.Location = new System.Drawing.Point(232, 418);
             this.buttonSair.Name = "buttonSair";
             this.buttonSair.Size = new System.Drawing.Size(120, 23);
-            this.buttonSair.TabIndex = 8;
+            this.buttonSair.TabIndex = 2;
             this.buttonSair.Text = "Sair";
             this.buttonSair.UseVisualStyleBackColor = true;
             this.buttonSair.Click += new System.EventHandler(this.buttonSair_Click);
             // 
-            // buttonPesquisar
+            // buttonCadastrarAtualizar
             // 
-            this.buttonPesquisar.Location = new System.Drawing.Point(265, 15);
-            this.buttonPesquisar.Name = "buttonPesquisar";
-            this.buttonPesquisar.Size = new System.Drawing.Size(120, 23);
-            this.buttonPesquisar.TabIndex = 10;
-            this.buttonPesquisar.Text = "Pesquisar";
-            this.buttonPesquisar.UseVisualStyleBackColor = true;
-            this.buttonPesquisar.Click += new System.EventHandler(this.buttonPesquisar_Click);
+            this.buttonCadastrarAtualizar.Location = new System.Drawing.Point(88, 418);
+            this.buttonCadastrarAtualizar.Name = "buttonCadastrarAtualizar";
+            this.buttonCadastrarAtualizar.Size = new System.Drawing.Size(120, 23);
+            this.buttonCadastrarAtualizar.TabIndex = 3;
+            this.buttonCadastrarAtualizar.Text = "Cadastrar";
+            this.buttonCadastrarAtualizar.UseVisualStyleBackColor = true;
+            this.buttonCadastrarAtualizar.Click += new System.EventHandler(this.buttonCadastrar_Click);
             // 
-            // frmEdicaoCadastro
+            // labelMensagem
+            // 
+            this.labelMensagem.Location = new System.Drawing.Point(6, 46);
+            this.labelMensagem.Name = "labelMensagem";
+            this.labelMensagem.Size = new System.Drawing.Size(165, 13);
+            this.labelMensagem.TabIndex = 4;
+            this.labelMensagem.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            // 
+            // groupBoxInfo
+            // 
+            this.groupBoxInfo.Controls.Add(this.labelMensagem);
+            this.groupBoxInfo.Location = new System.Drawing.Point(269, 23);
+            this.groupBoxInfo.Name = "groupBoxInfo";
+            this.groupBoxInfo.Size = new System.Drawing.Size(177, 100);
+            this.groupBoxInfo.TabIndex = 4;
+            this.groupBoxInfo.TabStop = false;
+            this.groupBoxInfo.Text = "Mensagem Sistema";
+            // 
+            // frmCadastro
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(463, 450);
-            this.Controls.Add(this.buttonAtualizar);
-            this.Controls.Add(this.buttonSair);
+            this.ClientSize = new System.Drawing.Size(459, 452);
             this.Controls.Add(this.groupBoxInfo);
+            this.Controls.Add(this.buttonCadastrarAtualizar);
+            this.Controls.Add(this.buttonSair);
             this.Controls.Add(this.groupBoxComplemento);
             this.Controls.Add(this.groupBoxLogin);
             this.MaximizeBox = false;
-            this.Name = "frmEdicaoCadastro";
+            this.Name = "frmCadastro";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Dentista App - Alteração e Consulta de Cadastro";
-            this.groupBoxInfo.ResumeLayout(false);
+            this.Text = "Dentista App - Cadastro Paciente";
+            this.groupBoxLogin.ResumeLayout(false);
+            this.groupBoxLogin.PerformLayout();
             this.groupBoxComplemento.ResumeLayout(false);
             this.groupBoxComplemento.PerformLayout();
             this.groupBoxAcesso.ResumeLayout(false);
             this.groupBoxAcesso.PerformLayout();
-            this.groupBoxLogin.ResumeLayout(false);
-            this.groupBoxLogin.PerformLayout();
+            this.groupBoxInfo.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
-        private System.Windows.Forms.GroupBox groupBoxInfo;
-        private System.Windows.Forms.Label labelMensagem;
+        private System.Windows.Forms.GroupBox groupBoxLogin;
+        private System.Windows.Forms.TextBox textBoxSenha;
+        private System.Windows.Forms.TextBox textBoxLogin;
+        private System.Windows.Forms.Label labelSenha;
+        private System.Windows.Forms.Label labelLogin;
         private System.Windows.Forms.GroupBox groupBoxComplemento;
-        private System.Windows.Forms.GroupBox groupBoxAcesso;
-        private System.Windows.Forms.RadioButton radioButtonSecretaria;
-        private System.Windows.Forms.RadioButton radioButtonOdontologista;
+        private System.Windows.Forms.TextBox textBoxNome;
+        private System.Windows.Forms.Label labelNome;
         private System.Windows.Forms.RadioButton radioButtonPaciente;
-        private System.Windows.Forms.TextBox textBoxCodigo;
-        private System.Windows.Forms.Label labelCodigo;
+        private System.Windows.Forms.RadioButton radioButtonOdontologista;
+        private System.Windows.Forms.RadioButton radioButtonSecretaria;
+        private System.Windows.Forms.TextBox textBoxDocumento;
+        private System.Windows.Forms.Label labelDocumento;
         private System.Windows.Forms.DateTimePicker dateTimePickerNascimento;
         private System.Windows.Forms.Label labelDataNascimento;
         private System.Windows.Forms.TextBox textBoxTelefone;
         private System.Windows.Forms.Label labelTelefone;
         private System.Windows.Forms.TextBox textBoxEndereco;
         private System.Windows.Forms.Label labelEndereco;
-        private System.Windows.Forms.TextBox textBoxDocumento;
-        private System.Windows.Forms.Label labelDocumento;
-        private System.Windows.Forms.TextBox textBoxNome;
-        private System.Windows.Forms.Label labelNome;
-        private System.Windows.Forms.GroupBox groupBoxLogin;
-        private System.Windows.Forms.TextBox textBoxSenha;
-        private System.Windows.Forms.TextBox textBoxLogin;
-        private System.Windows.Forms.Label labelSenha;
-        private System.Windows.Forms.Label labelLogin;
-        private System.Windows.Forms.Button buttonAtualizar;
+        private System.Windows.Forms.TextBox textBoxCodigo;
+        private System.Windows.Forms.Label labelCodigo;
         private System.Windows.Forms.Button buttonSair;
-        private System.Windows.Forms.Button buttonPesquisar;
+        private System.Windows.Forms.Button buttonCadastrarAtualizar;
+        private System.Windows.Forms.GroupBox groupBoxAcesso;
+        private System.Windows.Forms.Label labelMensagem;
+        private System.Windows.Forms.GroupBox groupBoxInfo;
     }
 }
