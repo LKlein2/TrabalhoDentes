@@ -42,10 +42,11 @@ namespace Model
             this.TipoAcesso = tipoAcesso;
         }
 
-        public Usuario(string login, string senha, string nome, string documento, int tipoAcesso, 
+        public Usuario(int id, string login, string senha, string nome, string documento, int tipoAcesso, 
                         DateTime dataCadastro, IAdministrativel criador, string endereco, string contato,
                         DateTime dataNascimento)
         {
+            this.ID = id;
             this.Login = login;
             this.Senha = senha;
             this.Nome = nome;

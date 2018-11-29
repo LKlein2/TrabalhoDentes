@@ -31,10 +31,10 @@ namespace DAO
 
                 comando.Parameters.Add("@login", SqlDbType.Text).Value = model.Login;
                 comando.Parameters.Add("@senha", SqlDbType.Text).Value = model.Senha;
-                comando.Parameters.Add("@ID", SqlDbType.Text).Value = model.ID;
+                comando.Parameters.Add("@ID", SqlDbType.Int).Value = model.ID;
                 if (model.Nome != null) comando.Parameters.Add("@nome", SqlDbType.Text).Value = model.Nome;
                 if (model.Documento != null) comando.Parameters.Add("@documento", SqlDbType.Text).Value = model.Documento;
-                if (model.TipoAcesso != 0) comando.Parameters.Add("@tipoAcesso", SqlDbType.Text).Value = model.TipoAcesso;
+                if (model.TipoAcesso != 0) comando.Parameters.Add("@tipoAcesso", SqlDbType.Int).Value = model.TipoAcesso;
                 if (model.DataCadastro != null) comando.Parameters.Add("datacadastro", SqlDbType.DateTime).Value = model.DataCadastro;
                 if (model.Endereco != null) comando.Parameters.Add("@endereco", SqlDbType.Text).Value = model.Endereco;
                 if (model.Contato != null) comando.Parameters.Add("@contato", SqlDbType.Text).Value = model.Contato;
@@ -52,12 +52,12 @@ namespace DAO
             sql += ", senha=@senha ";
             if (usuario.Nome != null)           sql += ", nome=@nome ";
             if (usuario.Documento != null)      sql += ", documento=@documento ";
-            if (usuario.TipoAcesso != 0)        sql += ", tipacesso=@tipoacesso ";
+            if (usuario.TipoAcesso != 0)        sql += ", tipoacesso=@tipoAcesso ";
             if (usuario.DataCadastro != null)   sql += ", datacadastro=@datacadastro ";
             if (usuario.Endereco != null) sql += ", endereco=@endereco ";
             if (usuario.Contato != null) sql += ", contato=@contato ";
             if (usuario.DataNascimento != null) sql += ", dataNascimento=@dataNascimento ";
-            sql += "where id = @id";
+            sql += "where id = @id ;";
 
             return sql;
         }
