@@ -74,6 +74,8 @@ namespace toothsProjectFinal
                 radioButtonPaciente.Checked = true;
             }
 
+            conexao.Fechar();
+
         }
 
         private void buttonAtualizar_Click(object sender, EventArgs e)
@@ -103,7 +105,7 @@ namespace toothsProjectFinal
                 return;
             }
 
-            Usuario usuarioAtualiza = new Usuario(textBoxLogin.Text, textBoxSenha.Text, textBoxNome.Text, textBoxDocumento.Text, rbc,
+            Usuario usuarioAtualiza = new Usuario(Convert.ToInt32(textBoxCodigo.Text),textBoxLogin.Text, textBoxSenha.Text, textBoxNome.Text, textBoxDocumento.Text, rbc,
                                             DateTime.Now, Acesso.Administrativel(), textBoxEndereco.Text, textBoxTelefone.Text,
                                             dateTimePickerNascimento.Value);
 
@@ -111,7 +113,9 @@ namespace toothsProjectFinal
             labelMensagem.Text = "Atualizado com sucesso !";
             labelMensagem.ForeColor = Color.Green;
             LimparTela();
-          
+
+            conexao.Fechar();
+
         }
 
         private void LimparTela ()

@@ -53,7 +53,7 @@ namespace toothsProjectFinal
                 return;
             }
 
-            Usuario newUser = new Usuario(textBoxLogin.Text, textBoxSenha.Text, textBoxNome.Text, textBoxDocumento.Text, rbc,
+            Usuario newUser = new Usuario(Convert.ToInt32(textBoxCodigo.Text = "1"),textBoxLogin.Text, textBoxSenha.Text, textBoxNome.Text, textBoxDocumento.Text, rbc,
                                             DateTime.Now, Acesso.Administrativel(), textBoxEndereco.Text, textBoxTelefone.Text,
                                             dateTimePickerNascimento.Value);
             if (newUser != null)
