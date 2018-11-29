@@ -58,12 +58,6 @@
     <Compile Include="CadastroView.Designer.cs">
       <DependentUpon>CadastroView.cs</DependentUpon>
     </Compile>
-    <Compile Include="ConsultaView.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="ConsultaView.Designer.cs">
-      <DependentUpon>ConsultaView.cs</DependentUpon>
-    </Compile>
     <Compile Include="EdicaoCadastroView.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -89,9 +83,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="CadastroView.resx">
       <DependentUpon>CadastroView.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="ConsultaView.resx">
-      <DependentUpon>ConsultaView.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="EdicaoCadastroView.resx">
       <DependentUpon>EdicaoCadastroView.cs</DependentUpon>
