@@ -53,8 +53,11 @@ namespace toothsProjectFinal
 
         private void buttonConsultas_Click(object sender, EventArgs e)
         {
-            ConsultaView lancarConsulta = new ConsultaView();
-            lancarConsulta.Show();
+            if (Acesso.TipoUsuario() != 4)
+            {
+                AgendaView mostraAgenda = new AgendaView();
+                mostraAgenda.Show();
+            }
         }
     }
 
