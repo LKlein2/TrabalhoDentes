@@ -45,10 +45,10 @@
             this.columnFim = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnObs = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.groupData = new System.Windows.Forms.GroupBox();
-            this.dateInicial = new System.Windows.Forms.DateTimePicker();
-            this.dateFinal = new System.Windows.Forms.DateTimePicker();
-            this.lblInicial = new System.Windows.Forms.Label();
             this.lblFinal = new System.Windows.Forms.Label();
+            this.lblInicial = new System.Windows.Forms.Label();
+            this.dateFinal = new System.Windows.Forms.DateTimePicker();
+            this.dateInicial = new System.Windows.Forms.DateTimePicker();
             this.groupDentista.SuspendLayout();
             this.groupPaciente.SuspendLayout();
             this.groupData.SuspendLayout();
@@ -145,6 +145,7 @@
             this.buttonCarregarAgenda.TabIndex = 3;
             this.buttonCarregarAgenda.Text = "CARREGAR AGENDA";
             this.buttonCarregarAgenda.UseVisualStyleBackColor = true;
+            this.buttonCarregarAgenda.Click += new System.EventHandler(this.buttonCarregarAgenda_Click);
             // 
             // listViewAgenda
             // 
@@ -156,7 +157,7 @@
             this.columnFim,
             this.columnObs});
             this.listViewAgenda.Location = new System.Drawing.Point(15, 145);
-            this.listViewAgenda.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.listViewAgenda.Margin = new System.Windows.Forms.Padding(4);
             this.listViewAgenda.Name = "listViewAgenda";
             this.listViewAgenda.Size = new System.Drawing.Size(980, 194);
             this.listViewAgenda.TabIndex = 4;
@@ -211,23 +212,14 @@
             this.groupData.TabStop = false;
             this.groupData.Text = "Intervalo de data";
             // 
-            // dateInicial
+            // lblFinal
             // 
-            this.dateInicial.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dateInicial.Location = new System.Drawing.Point(73, 25);
-            this.dateInicial.MinDate = new System.DateTime(2018, 1, 1, 0, 0, 0, 0);
-            this.dateInicial.Name = "dateInicial";
-            this.dateInicial.Size = new System.Drawing.Size(114, 22);
-            this.dateInicial.TabIndex = 0;
-            // 
-            // dateFinal
-            // 
-            this.dateFinal.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dateFinal.Location = new System.Drawing.Point(255, 25);
-            this.dateFinal.MinDate = new System.DateTime(2018, 1, 1, 0, 0, 0, 0);
-            this.dateFinal.Name = "dateFinal";
-            this.dateFinal.Size = new System.Drawing.Size(114, 22);
-            this.dateFinal.TabIndex = 6;
+            this.lblFinal.AutoSize = true;
+            this.lblFinal.Location = new System.Drawing.Point(203, 30);
+            this.lblFinal.Name = "lblFinal";
+            this.lblFinal.Size = new System.Drawing.Size(46, 17);
+            this.lblFinal.TabIndex = 8;
+            this.lblFinal.Text = "Final: ";
             // 
             // lblInicial
             // 
@@ -238,14 +230,23 @@
             this.lblInicial.TabIndex = 7;
             this.lblInicial.Text = "Inicial: ";
             // 
-            // lblFinal
+            // dateFinal
             // 
-            this.lblFinal.AutoSize = true;
-            this.lblFinal.Location = new System.Drawing.Point(203, 30);
-            this.lblFinal.Name = "lblFinal";
-            this.lblFinal.Size = new System.Drawing.Size(46, 17);
-            this.lblFinal.TabIndex = 8;
-            this.lblFinal.Text = "Final: ";
+            this.dateFinal.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dateFinal.Location = new System.Drawing.Point(255, 25);
+            this.dateFinal.MinDate = new System.DateTime(2018, 1, 1, 0, 0, 0, 0);
+            this.dateFinal.Name = "dateFinal";
+            this.dateFinal.Size = new System.Drawing.Size(114, 22);
+            this.dateFinal.TabIndex = 6;
+            // 
+            // dateInicial
+            // 
+            this.dateInicial.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dateInicial.Location = new System.Drawing.Point(73, 25);
+            this.dateInicial.MinDate = new System.DateTime(2018, 1, 1, 0, 0, 0, 0);
+            this.dateInicial.Name = "dateInicial";
+            this.dateInicial.Size = new System.Drawing.Size(114, 22);
+            this.dateInicial.TabIndex = 0;
             // 
             // Agenda
             // 
