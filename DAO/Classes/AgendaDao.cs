@@ -142,6 +142,9 @@ namespace Classes.DAO
                     foreach (DataRow row in tabela.Rows)
                     {
                         Agenda ag = new Agenda();
+                        ag.Dentista = dentista;
+                        ag.Paciente = paciente;
+
                         ag.Id = int.Parse(row["id"].ToString());
                         ag.DataConsulta = DateTime.Parse(row["dataConsulta"].ToString());
                         ag.Dentista.Id1 = int.Parse(row["id_dentista"].ToString());
@@ -161,7 +164,7 @@ namespace Classes.DAO
         private string MontaSqlLista(DateTime dataInicial, DateTime dataFinal, Paciente paciente, Dentista dentista)
         {
             string sql;
-            sql = "Select id, dataConsulta, nvl(id_dentista,0), nvl(id_paciente,0), inicio, fim, nvl(observacao_10,'')";
+            sql = "Select id, dataConsulta, isNull(id_dentista,0) as id_dentista, isNull(id_paciente,0) as id_paciente, inicio, fim, isNull(observacao_1,'') as observacao_1";
             sql += " from agenda where";
             sql += " dataConsulta between @dataInicial and @dataFinal";
             if (dentista != null) sql += " and id_dentista = @id_dentista";

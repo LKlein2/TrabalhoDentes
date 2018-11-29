@@ -31,7 +31,7 @@ namespace toothsProjectFinal
         {
             if (Acesso.TipoUsuario() != 4)
             { 
-                Agenda mostraAgenda = new Agenda();
+                AgendaView mostraAgenda = new AgendaView();
                 mostraAgenda.Show();
             }
         }
