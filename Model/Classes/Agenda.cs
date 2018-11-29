@@ -8,22 +8,44 @@ namespace Model
 {
     public class Agenda
     {
-        private DateTime data;
-        private DateTime horaInicial;
-        private DateTime horaFinal;
+        private int id;
+        private DateTime dataConsulta;
+        private Dentista dentista;
+        private Paciente paciente;
+        private string inicio;
+        private string fim;
+        private string observacao_1;
 
-        public Agenda () { }
-
-        public Agenda (DateTime data, DateTime horaInicial, DateTime horaFinal)
+        public Agenda()
         {
-            this.data = data;
-            this.horaInicial = horaInicial;
-            this.horaFinal = horaFinal;
+
         }
 
-        public DateTime Data { get => data; set => data = value; }
-        public DateTime HoraInicial { get => horaInicial; set => horaInicial = value; }
-        public DateTime HoraFinal { get => horaFinal; set => horaFinal = value; }
+        public Agenda(int id, DateTime dataConsulta, string inicio, string fim)
+        {
+            this.Id = id;
+            this.DataConsulta = dataConsulta;
+            this.Inicio = inicio;
+            this.Fim = fim;
+        }
 
+        public Agenda(int id, DateTime dataConsulta, Dentista dentista, Paciente paciente, string inicio, string fim, string observacao_1)
+        {
+            this.Id = id;
+            this.DataConsulta = dataConsulta;
+            this.Dentista = dentista;
+            this.Paciente = paciente;
+            this.Inicio = inicio;
+            this.Fim = fim;
+            this.Observacao_1 = observacao_1;
+        }
+
+        public int Id { get => id; set => id = value; }
+        public DateTime DataConsulta { get => dataConsulta; set => dataConsulta = value; }
+        public Dentista Dentista { get => dentista; set => dentista = value; }
+        public Paciente Paciente { get => paciente; set => paciente = value; }
+        public string Inicio { get => inicio; set => inicio = value; }
+        public string Fim { get => fim; set => fim = value; }
+        public string Observacao_1 { get => observacao_1; set => observacao_1 = value; }
     }
 }
