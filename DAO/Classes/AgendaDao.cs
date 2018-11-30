@@ -20,7 +20,7 @@ namespace Classes.DAO
         }
 
         public void Atualizar(Agenda model)
-        {
+         {
             using (SqlCommand comando = connection.Buscar().CreateCommand())
             {
                 string sql;
@@ -29,15 +29,15 @@ namespace Classes.DAO
                 comando.CommandText = (sql);
 
                 comando.Parameters.Add("@dataConsulta", SqlDbType.DateTime).Value = model.DataConsulta;
-                comando.Parameters.Add("@id_dentista", SqlDbType.Int).Value = model.Dentista;
-                comando.Parameters.Add("@id_paciente", SqlDbType.Int).Value = model.Paciente;
-                comando.Parameters.Add("@inicio", SqlDbType.Text).Value = model.Inicio;
-                comando.Parameters.Add("@fim", SqlDbType.Text).Value = model.Fim;
+                comando.Parameters.Add("@id_dentista", SqlDbType.Int).Value = model.Dentista.Id1;
+                comando.Parameters.Add("@id_paciente", SqlDbType.Int).Value = model.Paciente.Id;
+                comando.Parameters.Add("@inicio", SqlDbType.Time).Value = model.Inicio;
+                comando.Parameters.Add("@fim", SqlDbType.Time).Value = model.Fim;
                 comando.Parameters.Add("@id", SqlDbType.Int).Value = model.Id;
                 if (model.Observacao_1 != null) comando.Parameters.Add("@observacao_1", SqlDbType.Text).Value = model.Observacao_1;
-               
 
-                comando.ExecuteNonQuery();
+
+                comando.ExecuteScalar();
             } 
         }
 
@@ -45,14 +45,11 @@ namespace Classes.DAO
         {
             string sql;
             sql = "update agenda set ";
-            sql += " dataConsulta=@dataConsulta ";
-            sql += ", id_dentista=@id_dentista ";
+            sql += " id_dentista=@id_dentista ";
             sql += ", id_paciente=@id_paciente ";
-            sql += ", inicio=@inicio ";
-            sql += ", fim=@fim ";
             if (agenda.Observacao_1 != null)
                 sql += ", observacao_1=@observacao_1 ";
-            sql += "where id = @id ;";
+            sql += "where dataConsulta=@dataConsulta and inicio=@inicio and fim=@fim;";
 
             return sql;
         }
@@ -71,15 +68,14 @@ namespace Classes.DAO
                 comando.CommandText = sql;
 
                 comando.Parameters.Add("@dataConsulta", SqlDbType.DateTime).Value = model.DataConsulta;
-                comando.Parameters.Add("@id_dentista", SqlDbType.Int).Value = model.Dentista;
-                comando.Parameters.Add("@id_paciente", SqlDbType.Int).Value = model.Paciente;
-                comando.Parameters.Add("@inicio", SqlDbType.Text).Value = model.Inicio;
-                comando.Parameters.Add("@fim", SqlDbType.Text).Value = model.Fim;
+                comando.Parameters.Add("@id_dentista", SqlDbType.Int).Value = model.Dentista.Id1;
+                comando.Parameters.Add("@id_paciente", SqlDbType.Int).Value = model.Paciente.Id;
+                comando.Parameters.Add("@inicio", SqlDbType.Time).Value = model.Inicio;
+                comando.Parameters.Add("@fim", SqlDbType.Time).Value = model.Fim;
                 if (model.Observacao_1 != null)
                     comando.Parameters.Add("@observacao_1", SqlDbType.Text).Value = model.Observacao_1;
 
                 comando.ExecuteScalar();
-
             }
             return model;
         }
@@ -87,11 +83,11 @@ namespace Classes.DAO
         private string MontaSqlInsert(Agenda model)
         {
             string sql;
-            sql = "insert into agenda(dataCosulta, id_dentista, id_paciente, inicio, fim ";
+            sql = "insert into agenda(dataConsulta, id_dentista, id_paciente, inicio, fim ";
             if (model.Observacao_1 != null)
                 sql += ", observacao_1 ";
             sql += ") values (";
-            sql += "@dataCosulta, @id_dentista, @id_paciente, @inicio, @fim ";
+            sql += "@dataConsulta, @id_dentista, @id_paciente, @inicio, @fim ";
             if (model.Observacao_1 != null)
                 sql += ", @observacao_1 ";
             sql += ");";
@@ -169,7 +165,103 @@ namespace Classes.DAO
             sql += " dataConsulta between @dataInicial and @dataFinal";
             if (dentista != null) sql += " and id_dentista = @id_dentista";
             if (paciente != null) sql += " and id_paciente = @id_paciente";
-            sql += ";";
+            sql += " order by dataConsulta, inicio, fim;";
+            return sql;
+        }
+
+        public Agenda PopularAgenda(Agenda model)
+        {
+            using (SqlCommand comando = connection.Buscar().CreateCommand())
+            {
+                string sql = MontaSqlInsert(model);
+                comando.CommandType = CommandType.Text;
+                comando.CommandText = sql;
+
+                comando.Parameters.Add("@dataConsulta", SqlDbType.DateTime).Value = model.DataConsulta;
+                comando.Parameters.Add("@id_dentista", SqlDbType.Int).Value = 0;
+                comando.Parameters.Add("@id_paciente", SqlDbType.Int).Value = 0;
+                comando.Parameters.Add("@inicio", SqlDbType.Time).Value = model.Inicio;
+                comando.Parameters.Add("@fim", SqlDbType.Time).Value = model.Fim;
+                comando.Parameters.Add("@observacao_1", SqlDbType.Text).Value = "";
+
+                comando.ExecuteScalar();
+            }
+            return model;
+        }
+
+        private string MontaPopularAgenda(Agenda model)
+        {
+            string sql;
+            sql = "insert into agenda(dataConsulta, inicio, fim ";
+            sql += ") values (";
+            sql += "@dataConsulta, @inicio, @fim );";
+
+            return sql;
+        }
+
+        public bool IsPopulada(DateTime model)
+        {
+            Boolean retornar = false;
+            using (SqlCommand comando = connection.Buscar().CreateCommand())
+            {
+                string sql = MontaIsPopulada(model);
+                comando.CommandType = CommandType.Text;
+                comando.CommandText = sql;
+
+                comando.Parameters.Add("@dataConsulta", SqlDbType.DateTime).Value = model.Date.ToString("yyyy/MM/dd");
+
+                if (comando.ExecuteNonQuery() > 0)
+                {
+                    retornar = true;
+                }
+            }
+            return retornar;
+        }
+
+        private string MontaIsPopulada(DateTime model)
+        {
+            string sql;
+            sql = "select top(1) id from agenda where dataConsulta = @dataConsulta;";
+
+            return sql;
+        }
+
+        public bool LocalizarConsulta(Agenda model)
+        {
+            Boolean retornar = false;
+            using (SqlCommand comando = connection.Buscar().CreateCommand())
+            {
+                string sql;
+                sql = MontaLocalizarConsulta(model);
+                comando.CommandType = CommandType.Text;
+                comando.CommandText = (sql);
+
+                comando.Parameters.Add("@dataConsulta", SqlDbType.DateTime).Value = model.DataConsulta;
+                comando.Parameters.Add("@id_dentista", SqlDbType.Int).Value = model.Dentista.Id1;
+                comando.Parameters.Add("@id_paciente", SqlDbType.Int).Value = model.Paciente.Id;
+                comando.Parameters.Add("@inicio", SqlDbType.Time).Value = model.Inicio;
+                comando.Parameters.Add("@fim", SqlDbType.Time).Value = model.Fim;
+                comando.Parameters.Add("@id", SqlDbType.Int).Value = model.Id;
+                if (model.Observacao_1 != null) comando.Parameters.Add("@observacao_1", SqlDbType.Text).Value = model.Observacao_1;
+
+                if (comando.ExecuteNonQuery() > 0)
+                {
+                    retornar = true;
+                }
+            }
+            return retornar;
+        }
+
+        private string MontaLocalizarConsulta(Agenda agenda)
+        {
+            string sql;
+            sql = "select dataConsulta,inicio,fim,id_dentista ";
+            sql += "from agenda ";
+            sql += "where id_dentista=@id_dentista ";
+            sql += "and dataConsulta=@dataConsulta ";
+            sql += "and inicio=@inicio ";
+            sql += "and fim=@fim;";
+
             return sql;
         }
     }
