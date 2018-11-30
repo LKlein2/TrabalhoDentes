@@ -20,7 +20,7 @@ namespace Classes.DAO
         }
 
         public void Atualizar(Agenda model)
-        {
+         {
             using (SqlCommand comando = connection.Buscar().CreateCommand())
             {
                 string sql;
@@ -35,9 +35,9 @@ namespace Classes.DAO
                 comando.Parameters.Add("@fim", SqlDbType.Time).Value = model.Fim;
                 comando.Parameters.Add("@id", SqlDbType.Int).Value = model.Id;
                 if (model.Observacao_1 != null) comando.Parameters.Add("@observacao_1", SqlDbType.Text).Value = model.Observacao_1;
-               
 
-                comando.ExecuteNonQuery();
+
+                comando.ExecuteScalar();
             } 
         }
 
@@ -208,7 +208,7 @@ namespace Classes.DAO
                 comando.CommandType = CommandType.Text;
                 comando.CommandText = sql;
 
-                comando.Parameters.Add("@dataConsulta", SqlDbType.DateTime).Value = model;
+                comando.Parameters.Add("@dataConsulta", SqlDbType.DateTime).Value = model.Date.ToString("yyyy/MM/dd");
 
                 if (comando.ExecuteNonQuery() > 0)
                 {
@@ -226,5 +226,43 @@ namespace Classes.DAO
             return sql;
         }
 
+        public bool LocalizarConsulta(Agenda model)
+        {
+            Boolean retornar = false;
+            using (SqlCommand comando = connection.Buscar().CreateCommand())
+            {
+                string sql;
+                sql = MontaLocalizarConsulta(model);
+                comando.CommandType = CommandType.Text;
+                comando.CommandText = (sql);
+
+                comando.Parameters.Add("@dataConsulta", SqlDbType.DateTime).Value = model.DataConsulta;
+                comando.Parameters.Add("@id_dentista", SqlDbType.Int).Value = model.Dentista.Id1;
+                comando.Parameters.Add("@id_paciente", SqlDbType.Int).Value = model.Paciente.Id;
+                comando.Parameters.Add("@inicio", SqlDbType.Time).Value = model.Inicio;
+                comando.Parameters.Add("@fim", SqlDbType.Time).Value = model.Fim;
+                comando.Parameters.Add("@id", SqlDbType.Int).Value = model.Id;
+                if (model.Observacao_1 != null) comando.Parameters.Add("@observacao_1", SqlDbType.Text).Value = model.Observacao_1;
+
+                if (comando.ExecuteNonQuery() > 0)
+                {
+                    retornar = true;
+                }
+            }
+            return retornar;
+        }
+
+        private string MontaLocalizarConsulta(Agenda agenda)
+        {
+            string sql;
+            sql = "select dataConsulta,inicio,fim,id_dentista ";
+            sql += "from agenda ";
+            sql += "where id_dentista=@id_dentista ";
+            sql += "and dataConsulta=@dataConsulta ";
+            sql += "and inicio=@inicio ";
+            sql += "and fim=@fim;";
+
+            return sql;
+        }
     }
 }
