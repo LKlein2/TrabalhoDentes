@@ -38,43 +38,47 @@ namespace toothsProjectFinal
             UsuarioDao pesquisaCadstro = new UsuarioDao(conexao);
 
             Usuario usuarioPesquisa = new Usuario();
+                if (textBoxCodigo.Text != "")
+                {
 
-            if (pesquisaCadstro.LocalizarPorId(Convert.ToInt16(textBoxCodigo.Text)) != null)
-            {
-                usuarioPesquisa = pesquisaCadstro.LocalizarPorId(Convert.ToInt16(textBoxCodigo.Text));
-                labelMensagem.Text = "Usuario localizado !";
-                labelMensagem.ForeColor = Color.Green;
-            }
-            else
-            {
-                labelMensagem.Text = "Usuario não localizado !";
-                labelMensagem.ForeColor = Color.Red;
-                LimparTela();
-                return;
-            }
 
-            textBoxLogin.Text = usuarioPesquisa.Login;
-            textBoxSenha.Text = usuarioPesquisa.Senha;
-            textBoxNome.Text = usuarioPesquisa.Nome;
-            textBoxDocumento.Text = usuarioPesquisa.Documento;
-            textBoxEndereco.Text = usuarioPesquisa.Endereco;
-            textBoxTelefone.Text = usuarioPesquisa.Contato;
-            dateTimePickerNascimento.Value = usuarioPesquisa.DataNascimento;
+                if (pesquisaCadstro.LocalizarPorId(Convert.ToInt16(textBoxCodigo.Text)) != null)
+                {
+                    usuarioPesquisa = pesquisaCadstro.LocalizarPorId(Convert.ToInt16(textBoxCodigo.Text));
+                    labelMensagem.Text = "Usuario localizado !";
+                    labelMensagem.ForeColor = Color.Green;
+                }
+                else
+                {
+                    labelMensagem.Text = "Usuario não localizado !";
+                    labelMensagem.ForeColor = Color.Red;
+                    LimparTela();
+                    return;
+                }
 
-            if (usuarioPesquisa.TipoAcesso == 2)
-            {
-                radioButtonOdontologista.Checked = true;
-            }
-            if (usuarioPesquisa.TipoAcesso == 3)
-            {
-                radioButtonSecretaria.Checked = true;
-            }
-            if (usuarioPesquisa.TipoAcesso == 4)
-            {
-                radioButtonPaciente.Checked = true;
-            }
+                textBoxLogin.Text = usuarioPesquisa.Login;
+                textBoxSenha.Text = usuarioPesquisa.Senha;
+                textBoxNome.Text = usuarioPesquisa.Nome;
+                textBoxDocumento.Text = usuarioPesquisa.Documento;
+                textBoxEndereco.Text = usuarioPesquisa.Endereco;
+                textBoxTelefone.Text = usuarioPesquisa.Contato;
+                dateTimePickerNascimento.Value = usuarioPesquisa.DataNascimento;
 
-            conexao.Fechar();
+                if (usuarioPesquisa.TipoAcesso == 2)
+                {
+                    radioButtonOdontologista.Checked = true;
+                }
+                if (usuarioPesquisa.TipoAcesso == 3)
+                {
+                    radioButtonSecretaria.Checked = true;
+                }
+                if (usuarioPesquisa.TipoAcesso == 4)
+                {
+                    radioButtonPaciente.Checked = true;
+                }
+
+                conexao.Fechar();
+            }
 
         }
 

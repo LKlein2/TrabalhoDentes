@@ -196,7 +196,7 @@ namespace toothsProjectFinal
             }
             if (txtIdPaciente.Text.Length == 0)
             {
-                dentista = null;
+                paciente = null;
                 telaDentista(true);
             }
         }
@@ -205,32 +205,46 @@ namespace toothsProjectFinal
         {
             AgendaDao agendaDao = RetornaAgendaDao();
             agenda = null;
-
-            agenda = agendaDao.BuscaListaAgendas(dataInicial, dataFinal, paciente, dentista);
+            Paciente p = null;
+            Dentista d = null;
+            if (checkBranco.Checked == false)
+            {
+                p = paciente;
+                d = dentista;
+            }
+            agenda = agendaDao.BuscaListaAgendas(dataInicial, dataFinal, p, d);
 
             listViewAgenda.Items.Clear();
             foreach (var a in agenda)
             {
-                if (dentista != null && a.Dentista.Id1 == dentista.Id1)
+                if (dentista != null && a.Dentista != null)
                 {
-                    a.Dentista = dentista;
+                    if (a.Dentista.Id1 == dentista.Id1)
+                        a.Dentista = dentista;
                 } else
                 {
                     //Fazer aqui
                 }
 
-                if (paciente != null && a.Paciente.Id == paciente.Id)
+                if (paciente != null && a.Paciente != null)
                 {
-                    a.Paciente = paciente;
+                    if (a.Paciente.Id == paciente.Id)
+                        a.Paciente = paciente;
                 } else
                 {
                     // fazer aqui tb
                 }
+                string dentisaNome = "";
+                string pacienteNome = "";
+                if (a.Dentista != null) 
+                     dentisaNome = (a.Dentista.Id1.ToString() + " - " + a.Dentista.Usuario.Nome);
+                if(a.Paciente != null)
+                    pacienteNome = (a.Paciente.Id.ToString() + " - " + a.Paciente.Usuario.Nome);
                 
                 ListViewItem li = new ListViewItem(
                 new string[] { (a.DataConsulta.ToShortDateString()),
-                               (a.Dentista.Id1.ToString() + " - " + a.Dentista.Usuario.Nome),
-                               (a.Paciente.Id.ToString() + " - " + a.Paciente.Usuario.Nome),
+                               (dentisaNome),
+                               (pacienteNome),
                                (a.Inicio), (a.Fim), a.Observacao_1}
                 );
                 listViewAgenda.Items.Add(li);

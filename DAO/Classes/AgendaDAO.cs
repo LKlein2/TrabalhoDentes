@@ -28,16 +28,16 @@ namespace Classes.DAO
                 comando.CommandType = CommandType.Text;
                 comando.CommandText = (sql);
 
-                comando.Parameters.Add("@dataConsulta", SqlDbType.DateTime).Value = model.DataConsulta;
                 comando.Parameters.Add("@id_dentista", SqlDbType.Int).Value = model.Dentista.Id1;
                 comando.Parameters.Add("@id_paciente", SqlDbType.Int).Value = model.Paciente.Id;
+                if (model.Observacao_1 != "") comando.Parameters.Add("@observacao_1", SqlDbType.Text).Value = model.Observacao_1;
+                comando.Parameters.Add("@dataConsulta", SqlDbType.DateTime).Value = model.DataConsulta.ToShortDateString();
                 comando.Parameters.Add("@inicio", SqlDbType.Time).Value = model.Inicio;
                 comando.Parameters.Add("@fim", SqlDbType.Time).Value = model.Fim;
-                comando.Parameters.Add("@id", SqlDbType.Int).Value = model.Id;
-                if (model.Observacao_1 != null) comando.Parameters.Add("@observacao_1", SqlDbType.Text).Value = model.Observacao_1;
-               
-
+                //comando.Parameters.Add("@id", SqlDbType.Int).Value = model.Id;
+                string asas = comando.Parameters.ToString();
                 comando.ExecuteNonQuery();
+
             } 
         }
 
@@ -47,7 +47,7 @@ namespace Classes.DAO
             sql = "update agenda set ";
             sql += " id_dentista=@id_dentista ";
             sql += ", id_paciente=@id_paciente ";
-            if (agenda.Observacao_1 != null)
+            if (agenda.Observacao_1 != "")
                 sql += ", observacao_1=@observacao_1 ";
             sql += "where dataConsulta=@dataConsulta and inicio=@inicio and fim=@fim;";
 
@@ -143,8 +143,8 @@ namespace Classes.DAO
 
                         ag.Id = int.Parse(row["id"].ToString());
                         ag.DataConsulta = DateTime.Parse(row["dataConsulta"].ToString());
-                        ag.Dentista.Id1 = int.Parse(row["id_dentista"].ToString());
-                        ag.Paciente.Id = int.Parse(row["id_paciente"].ToString());
+                        if (ag.Dentista != null) ag.Dentista.Id1 = int.Parse(row["id_dentista"].ToString());
+                        if (ag.Paciente != null) ag.Paciente.Id = int.Parse(row["id_paciente"].ToString());
                         ag.Inicio = row["inicio"].ToString();
                         ag.Fim = row["fim"].ToString();
                         ag.Observacao_1 = row["observacao_1"].ToString();
