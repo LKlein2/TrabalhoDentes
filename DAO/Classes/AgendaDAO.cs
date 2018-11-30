@@ -229,5 +229,42 @@ namespace Classes.DAO
             return sql;
         }
 
+        public bool LocalizarConsulta(Agenda model)
+        {
+            Boolean retornar = false;
+            using (SqlCommand comando = connection.Buscar().CreateCommand())
+            {
+                string sql;
+                sql = MontaLocalizarConsulta(model);
+                comando.CommandType = CommandType.Text;
+                comando.CommandText = (sql);
+                comando.Parameters.Add("@dataConsulta", SqlDbType.DateTime).Value = model.DataConsulta.ToShortDateString();
+                //comando.Parameters.Add("@id_dentista", SqlDbType.Int).Value = model.Dentista.Id1;
+                //comando.Parameters.Add("@id_paciente", SqlDbType.Int).Value = model.Paciente.Id;
+                comando.Parameters.Add("@inicio", SqlDbType.Time).Value = model.Inicio;
+                comando.Parameters.Add("@fim", SqlDbType.Time).Value = model.Fim;
+                //comando.Parameters.Add("@id", SqlDbType.Int).Value = model.Id;
+                //if (model.Observacao_1 != null) comando.Parameters.Add("@observacao_1", SqlDbType.Text).Value = model.Observacao_1;
+                using (SqlDataReader reader = comando.ExecuteReader())
+                {
+                    if (reader.HasRows)
+                    {
+                        return true;
+                    }
+                }
+            }
+            return false;
+        }
+        private string MontaLocalizarConsulta(Agenda agenda)
+        {
+            string sql;
+            sql = "select 1 ";
+            sql += "from agenda ";
+            sql += "where ";// id_dentista=@id_dentista ";
+            sql += "dataConsulta=@dataConsulta ";
+            sql += "and inicio=@inicio ";
+            sql += "and fim=@fim;";
+            return sql;
+        }
     }
 }

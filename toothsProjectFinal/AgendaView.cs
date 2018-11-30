@@ -268,10 +268,8 @@ namespace toothsProjectFinal
                 
                 if (comboHoraInicio.Text != "" && comboHoraFim.Text != "")
                 {
-                    //if ()
-                    //{
                         Agenda novaConsulta = new Agenda(1, dateConsulta.Value, dentista, paciente, comboHoraInicio.Text, comboHoraFim.Text, textBoxObservacao1.Text);
-                        if (agendaDao.LocalizarConsulta(novaConsulta) == false)
+                        if (agendaDao.LocalizarConsulta(novaConsulta) == true)
                         {
                             agendaDao.Atualizar(novaConsulta);
                             MessageBox.Show("Agendado com sucesso !");
@@ -279,16 +277,10 @@ namespace toothsProjectFinal
                         }
                         else
                         {
-                        MessageBox.Show("Horario não localizado ou conslta ja marcada para esse horário!");
+                        MessageBox.Show("Horario não localizado!");
                         comboHoraInicio.Focus();
                     }
-                        
-                    //}
-                    //else
-                   // {
 
-                   // }
-                    
                 }
                 else
                 {
