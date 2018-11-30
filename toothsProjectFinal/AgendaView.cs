@@ -265,14 +265,24 @@ namespace toothsProjectFinal
 
             if (paciente != null && dentista != null)
             {
-                Agenda novaConsulta = new Agenda(1, dateConsulta.Value, dentista, paciente, comboHoraInicio.Text, comboHoraFim.Text, textBoxObservacao1.Text);
+                
                 if (comboHoraInicio.Text != "" && comboHoraFim.Text != "")
                 {
                     //if ()
                     //{
-                        agendaDao.Atualizar(novaConsulta);
-                        MessageBox.Show("Agendado com sucesso !");
-                        LimparDadosConsulta();
+                        Agenda novaConsulta = new Agenda(1, dateConsulta.Value, dentista, paciente, comboHoraInicio.Text, comboHoraFim.Text, textBoxObservacao1.Text);
+                        if (agendaDao.LocalizarConsulta(novaConsulta) == false)
+                        {
+                            agendaDao.Atualizar(novaConsulta);
+                            MessageBox.Show("Agendado com sucesso !");
+                            LimparDadosConsulta();
+                        }
+                        else
+                        {
+                        MessageBox.Show("Horario não localizado ou conslta ja marcada para esse horário!");
+                        comboHoraInicio.Focus();
+                    }
+                        
                     //}
                     //else
                    // {
