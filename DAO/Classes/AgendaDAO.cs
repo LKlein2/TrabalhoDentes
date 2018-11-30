@@ -210,9 +210,12 @@ namespace Classes.DAO
 
                 comando.Parameters.Add("@dataConsulta", SqlDbType.DateTime).Value = model.Date.ToString("yyyy/MM/dd");
 
-                if (comando.ExecuteNonQuery() > 0)
+                using (SqlDataReader reader = comando.ExecuteReader())
                 {
-                    retornar = true;
+                    if (reader.HasRows)
+                    {
+                        return true;
+                    }
                 }
             }
             return retornar;
@@ -221,7 +224,7 @@ namespace Classes.DAO
         private string MontaIsPopulada(DateTime model)
         {
             string sql;
-            sql = "select top(1) id from agenda where dataConsulta = @dataConsulta;";
+            sql = "select distinct(1) from agenda where year(dataConsulta) = Year(@dataConsulta);";
 
             return sql;
         }
