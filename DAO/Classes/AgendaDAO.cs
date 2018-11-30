@@ -29,10 +29,10 @@ namespace Classes.DAO
                 comando.CommandText = (sql);
 
                 comando.Parameters.Add("@dataConsulta", SqlDbType.DateTime).Value = model.DataConsulta;
-                comando.Parameters.Add("@id_dentista", SqlDbType.Int).Value = model.Dentista;
-                comando.Parameters.Add("@id_paciente", SqlDbType.Int).Value = model.Paciente;
-                comando.Parameters.Add("@inicio", SqlDbType.Text).Value = model.Inicio;
-                comando.Parameters.Add("@fim", SqlDbType.Text).Value = model.Fim;
+                comando.Parameters.Add("@id_dentista", SqlDbType.Int).Value = model.Dentista.Id1;
+                comando.Parameters.Add("@id_paciente", SqlDbType.Int).Value = model.Paciente.Id;
+                comando.Parameters.Add("@inicio", SqlDbType.Time).Value = model.Inicio;
+                comando.Parameters.Add("@fim", SqlDbType.Time).Value = model.Fim;
                 comando.Parameters.Add("@id", SqlDbType.Int).Value = model.Id;
                 if (model.Observacao_1 != null) comando.Parameters.Add("@observacao_1", SqlDbType.Text).Value = model.Observacao_1;
                
@@ -45,14 +45,11 @@ namespace Classes.DAO
         {
             string sql;
             sql = "update agenda set ";
-            sql += " dataConsulta=@dataConsulta ";
-            sql += ", id_dentista=@id_dentista ";
+            sql += " id_dentista=@id_dentista ";
             sql += ", id_paciente=@id_paciente ";
-            sql += ", inicio=@inicio ";
-            sql += ", fim=@fim ";
             if (agenda.Observacao_1 != null)
                 sql += ", observacao_1=@observacao_1 ";
-            sql += "where id = @id ;";
+            sql += "where dataConsulta=@dataConsulta and inicio=@inicio and fim=@fim;";
 
             return sql;
         }
