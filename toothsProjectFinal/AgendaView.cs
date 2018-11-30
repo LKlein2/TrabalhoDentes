@@ -26,6 +26,31 @@ namespace toothsProjectFinal
         {
             InitializeComponent();
             PrepararTela();
+            PopularComboBoxHora();
+            VerificarDatasAgenda();
+        }
+
+        private void PopularComboBoxHora()
+        {
+            comboHoraInicio.Items.Add("8:00");
+            comboHoraInicio.Items.Add("9:00");
+            comboHoraInicio.Items.Add("10:00");
+            comboHoraInicio.Items.Add("11:00");
+            comboHoraInicio.Items.Add("13:00");
+            comboHoraInicio.Items.Add("14:00");
+            comboHoraInicio.Items.Add("15:00");
+            comboHoraInicio.Items.Add("16:00");
+            comboHoraInicio.Items.Add("17:00");
+
+            comboHoraFim.Items.Add("9:00");
+            comboHoraFim.Items.Add("10:00");
+            comboHoraFim.Items.Add("11:00");
+            comboHoraFim.Items.Add("12:00");
+            comboHoraFim.Items.Add("14:00");
+            comboHoraFim.Items.Add("15:00");
+            comboHoraFim.Items.Add("16:00");
+            comboHoraFim.Items.Add("17:00");
+            comboHoraFim.Items.Add("18:00");
         }
 
         private void PrepararTela()
@@ -212,5 +237,86 @@ namespace toothsProjectFinal
 
             }
         }
+
+        private void buttonLancar_Click(object sender, EventArgs e)
+        {
+            if (agenda == null)
+            {
+                MessageBox.Show("Consulte a agenda antes de lançar consultas !");
+                buttonCarregarAgenda.Focus();
+                return;
+            }
+
+            AgendaDao agendaDao = RetornaAgendaDao();
+
+            if (paciente != null && dentista != null)
+            {
+                Agenda novaConsulta = new Agenda(1, dateConsulta.Value, dentista, paciente, comboHoraInicio.Text, comboHoraFim.Text, textBoxObservacao1.Text);
+                agendaDao.Inserir(novaConsulta);
+                MessageBox.Show("Agendado com sucesso !");
+                LimparDadosConsulta();
+            }
+            else
+            {
+                MessageBox.Show("Selecione um paciente antes !");
+                txtIdPaciente.Focus();
+            }           
+
+        }
+
+        private void LimparDadosConsulta()
+        {
+            dateConsulta.Value = DateTime.Now;
+            comboHoraInicio.SelectedIndex = -1;
+            comboHoraFim.SelectedIndex = -1;
+            textBoxObservacao1.Clear();
+        }
+
+        private void VerificarDatasAgenda()
+        {
+            AgendaDao agendaDao = RetornaAgendaDao();
+            DateTime data = new DateTime(DateTime.Now.Year, 1, 1);
+
+            if (agendaDao.IsPopulada(data) == false)
+            {
+                CriarConsultas();
+            }
+          
+        }
+
+        private void CriarConsultas()
+        {
+            AgendaDao agendaDao = RetornaAgendaDao();
+            Agenda novoHorario = new Agenda();
+            DateTime dataInicio = new DateTime(DateTime.Now.Year, 1, 1);
+            DateTime dataFim = new DateTime(DateTime.Now.Year, 12, 31);
+
+            for (DateTime data = dataInicio; data < dataFim; data = data.AddDays(1))
+            {
+               if ((int)data.DayOfWeek == 1 || (int)data.DayOfWeek == 2 || (int)data.DayOfWeek == 3 || (int)data.DayOfWeek == 4 || (int)data.DayOfWeek == 5)
+                {
+                    novoHorario = new Agenda(1, data.Date, null, null, "08:00", "09:00", "");
+                    agendaDao.PopularAgenda(novoHorario);
+                    novoHorario = new Agenda(1, data.Date, null, null, "09:00", "10:00", "");
+                    agendaDao.PopularAgenda(novoHorario);
+                    novoHorario = new Agenda(1, data.Date, null, null, "10:00", "11:00", "");
+                    agendaDao.PopularAgenda(novoHorario);
+                    novoHorario = new Agenda(1, data.Date, null, null, "11:00", "12:00", "");
+                    agendaDao.PopularAgenda(novoHorario);
+                    novoHorario = new Agenda(1, data.Date, null, null, "13:00", "14:00", "");
+                    agendaDao.PopularAgenda(novoHorario);
+                    novoHorario = new Agenda(1, data.Date, null, null, "14:00", "15:00", "");
+                    agendaDao.PopularAgenda(novoHorario);
+                    novoHorario = new Agenda(1, data.Date, null, null, "15:00", "16:00", "");
+                    agendaDao.PopularAgenda(novoHorario);
+                    novoHorario = new Agenda(1, data.Date, null, null, "16:00", "17:00", "");
+                    agendaDao.PopularAgenda(novoHorario);
+                    novoHorario = new Agenda(1, data.Date, null, null, "17:00", "18:00", "");
+                    agendaDao.PopularAgenda(novoHorario);
+                }
+            }
+ 
+        }
+
     }
 }

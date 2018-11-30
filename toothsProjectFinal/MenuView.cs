@@ -53,11 +53,9 @@ namespace toothsProjectFinal
 
         private void buttonConsultas_Click(object sender, EventArgs e)
         {
-            if (Acesso.TipoUsuario() != 4)
-            {
-                AgendaView mostraAgenda = new AgendaView();
-                mostraAgenda.Show();
-            }
+            AgendaView mostraAgenda = new AgendaView();
+            mostraAgenda.Show();
+
         }
     }
 
