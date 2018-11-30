@@ -50,15 +50,15 @@
             this.dateFinal = new System.Windows.Forms.DateTimePicker();
             this.dateInicial = new System.Windows.Forms.DateTimePicker();
             this.groupBoxLancarConsulta = new System.Windows.Forms.GroupBox();
+            this.comboHoraFim = new System.Windows.Forms.ComboBox();
+            this.comboHoraInicio = new System.Windows.Forms.ComboBox();
             this.button1 = new System.Windows.Forms.Button();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.labelObservacao_1 = new System.Windows.Forms.Label();
+            this.labelFim = new System.Windows.Forms.Label();
+            this.labelInicio = new System.Windows.Forms.Label();
             this.labelConsulta = new System.Windows.Forms.Label();
             this.dateTimePickerConsulta = new System.Windows.Forms.DateTimePicker();
-            this.labelInicio = new System.Windows.Forms.Label();
-            this.labelFim = new System.Windows.Forms.Label();
-            this.comboHoraInicio = new System.Windows.Forms.ComboBox();
-            this.comboHoraFim = new System.Windows.Forms.ComboBox();
             this.groupDentista.SuspendLayout();
             this.groupPaciente.SuspendLayout();
             this.groupData.SuspendLayout();
@@ -149,10 +149,10 @@
             // 
             // buttonCarregarAgenda
             // 
-            this.buttonCarregarAgenda.Location = new System.Drawing.Point(821, 81);
+            this.buttonCarregarAgenda.Location = new System.Drawing.Point(818, 93);
             this.buttonCarregarAgenda.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.buttonCarregarAgenda.Name = "buttonCarregarAgenda";
-            this.buttonCarregarAgenda.Size = new System.Drawing.Size(175, 58);
+            this.buttonCarregarAgenda.Size = new System.Drawing.Size(175, 46);
             this.buttonCarregarAgenda.TabIndex = 3;
             this.buttonCarregarAgenda.Text = "CARREGAR AGENDA";
             this.buttonCarregarAgenda.UseVisualStyleBackColor = true;
@@ -168,7 +168,7 @@
             this.columnFim,
             this.columnObs});
             this.listViewAgenda.Location = new System.Drawing.Point(15, 256);
-            this.listViewAgenda.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.listViewAgenda.Margin = new System.Windows.Forms.Padding(4);
             this.listViewAgenda.Name = "listViewAgenda";
             this.listViewAgenda.Size = new System.Drawing.Size(980, 194);
             this.listViewAgenda.TabIndex = 4;
@@ -276,6 +276,22 @@
             this.groupBoxLancarConsulta.TabStop = false;
             this.groupBoxLancarConsulta.Text = "Lançamento de Consulta";
             // 
+            // comboHoraFim
+            // 
+            this.comboHoraFim.FormattingEnabled = true;
+            this.comboHoraFim.Location = new System.Drawing.Point(464, 55);
+            this.comboHoraFim.Name = "comboHoraFim";
+            this.comboHoraFim.Size = new System.Drawing.Size(121, 24);
+            this.comboHoraFim.TabIndex = 15;
+            // 
+            // comboHoraInicio
+            // 
+            this.comboHoraInicio.FormattingEnabled = true;
+            this.comboHoraInicio.Location = new System.Drawing.Point(180, 55);
+            this.comboHoraInicio.Name = "comboHoraInicio";
+            this.comboHoraInicio.Size = new System.Drawing.Size(121, 24);
+            this.comboHoraInicio.TabIndex = 14;
+            // 
             // button1
             // 
             this.button1.Location = new System.Drawing.Point(789, 58);
@@ -303,6 +319,24 @@
             this.labelObservacao_1.TabIndex = 13;
             this.labelObservacao_1.Text = "Observacao:";
             // 
+            // labelFim
+            // 
+            this.labelFim.AutoSize = true;
+            this.labelFim.Location = new System.Drawing.Point(367, 58);
+            this.labelFim.Name = "labelFim";
+            this.labelFim.Size = new System.Drawing.Size(69, 17);
+            this.labelFim.TabIndex = 12;
+            this.labelFim.Text = "Hora Fim:";
+            // 
+            // labelInicio
+            // 
+            this.labelInicio.AutoSize = true;
+            this.labelInicio.Location = new System.Drawing.Point(35, 58);
+            this.labelInicio.Name = "labelInicio";
+            this.labelInicio.Size = new System.Drawing.Size(79, 17);
+            this.labelInicio.TabIndex = 11;
+            this.labelInicio.Text = "Hora Inicio:";
+            // 
             // labelConsulta
             // 
             this.labelConsulta.AutoSize = true;
@@ -321,40 +355,6 @@
             this.dateTimePickerConsulta.Name = "dateTimePickerConsulta";
             this.dateTimePickerConsulta.Size = new System.Drawing.Size(113, 22);
             this.dateTimePickerConsulta.TabIndex = 9;
-            // 
-            // labelInicio
-            // 
-            this.labelInicio.AutoSize = true;
-            this.labelInicio.Location = new System.Drawing.Point(13, 57);
-            this.labelInicio.Name = "labelInicio";
-            this.labelInicio.Size = new System.Drawing.Size(79, 17);
-            this.labelInicio.TabIndex = 11;
-            this.labelInicio.Text = "Hora Inicio:";
-            // 
-            // labelFim
-            // 
-            this.labelFim.AutoSize = true;
-            this.labelFim.Location = new System.Drawing.Point(347, 58);
-            this.labelFim.Name = "labelFim";
-            this.labelFim.Size = new System.Drawing.Size(69, 17);
-            this.labelFim.TabIndex = 12;
-            this.labelFim.Text = "Hora Fim:";
-            // 
-            // comboHoraInicio
-            // 
-            this.comboHoraInicio.FormattingEnabled = true;
-            this.comboHoraInicio.Location = new System.Drawing.Point(180, 55);
-            this.comboHoraInicio.Name = "comboHoraInicio";
-            this.comboHoraInicio.Size = new System.Drawing.Size(121, 24);
-            this.comboHoraInicio.TabIndex = 14;
-            // 
-            // comboHoraFim
-            // 
-            this.comboHoraFim.FormattingEnabled = true;
-            this.comboHoraFim.Location = new System.Drawing.Point(464, 55);
-            this.comboHoraFim.Name = "comboHoraFim";
-            this.comboHoraFim.Size = new System.Drawing.Size(121, 24);
-            this.comboHoraFim.TabIndex = 15;
             // 
             // AgendaView
             // 

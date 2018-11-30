@@ -197,12 +197,54 @@ namespace DAO
                         usuario.Endereco = reader.GetString(7);
                         usuario.Contato = reader.GetString(8);
                         usuario.DataNascimento = reader.GetDateTime(9);
-                        
-
                     }
                 }
             }
             return usuario;
+        }
+
+        public List<Usuario> Localizar(int tipoAcesso, int id = 0, string nome = "")
+        {
+            List<Usuario> usuarios = new List<Usuario>();
+
+            using (SqlCommand comando = connection.Buscar().CreateCommand())
+            {
+                string sql;
+                sql = MontaSqlLista(tipoAcesso, id, nome);
+                comando.CommandType = CommandType.Text;
+                comando.CommandText = sql;
+                comando.Parameters.Add("@tipoAcesso", SqlDbType.Int).Value = tipoAcesso;
+                if (id != 0) comando.Parameters.Add("@id", SqlDbType.Int).Value = id;
+                if (nome != "") comando.Parameters.Add("@nome", SqlDbType.Text).Value = nome;
+
+                using (SqlDataAdapter adapter = new SqlDataAdapter(comando))
+                {
+                    DataTable tabela = new DataTable();
+                    adapter.Fill(tabela);
+
+                    foreach (DataRow row in tabela.Rows)
+                    {
+                        Usuario a = new Usuario();
+
+                        a.ID = int.Parse(row["id"].ToString());
+                        a.Nome = row["nome"].ToString();
+                        a.Documento = row["documento"].ToString();
+
+                        usuarios.Add(a);
+                    }
+                }
+            }
+
+            return usuarios;
+        }
+
+        private string MontaSqlLista(int tipoAcesso, int id, string nome)
+        {
+            string sql;
+            sql = "Select id, nome, documento from usuario where tipoacesso = @tipoAcesso";
+            if (id != 0) sql += " and id = @id";
+            if (nome != "") sql += " and nome = @nome;";
+            return sql;
         }
 
         public bool Remover(Usuario model)
